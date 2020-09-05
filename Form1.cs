@@ -19,7 +19,7 @@ namespace data_structure_project_record_company{
 		}
 
 		private void button1_Click(object sender, EventArgs e) {
-			general.mandarMuriloTomarNoCu("Murilo, poderia por obséquio enfiar algo de natureza grotesca no seu orificio anal, seu filho de uma dama que por ventura realiza casos extraconjugais remunerados.");
+
 		}
 	}
 }
