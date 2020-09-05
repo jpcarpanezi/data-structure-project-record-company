@@ -1,0 +1,15 @@
+D:\Visual Studio Projects\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.exe
+D:\Visual Studio Projects\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.deps.json
+D:\Visual Studio Projects\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.runtimeconfig.json
+D:\Visual Studio Projects\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.runtimeconfig.dev.json
+D:\Visual Studio Projects\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.dll
+D:\Visual Studio Projects\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.pdb
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.csprojAssemblyReference.cache
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data_structure_project_record_company.Form1.resources
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.csproj.GenerateResource.cache
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.AssemblyInfoInputs.cache
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.AssemblyInfo.cs
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.dll
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.pdb
+D:\Visual Studio Projects\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.genruntimeconfig.cache
