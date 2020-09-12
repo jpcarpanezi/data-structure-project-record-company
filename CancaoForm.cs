@@ -14,47 +14,48 @@ namespace data_structure_project_record_company {
 
         public CancaoForm() {
             InitializeComponent();
-            Carregar();
 
             Index = -1;
         }
 
         public CancaoForm(int index) {
             InitializeComponent();
-            Carregar();
             Codigo.Enabled = false;
-
-            Cancao cancaoTemp = General.Cancoes[index];
-            Codigo.Text = cancaoTemp.Codigo.ToString();
-            Titulo.Text = cancaoTemp.Titulo;
-            Letra.Text = cancaoTemp.Letra;
-            Melodia.Text = cancaoTemp.Melodia;
-            Compositor.SelectedIndex = cancaoTemp.CodigoCompositor;
-            Artista.SelectedIndex = cancaoTemp.CodigoArtistaPrimeiraGravacao;
 
             Index = index;
         }
 
-        private void Carregar() {
+        private void CancaoForm_Load(object sender, EventArgs e) {
+
             if (General.CancoesSize >= General.MaxSize) {
                 MessageBox.Show("O limite de espaço para canções foi atingido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
 
-            /*if (General.ArtistasSize == 0) {
+            if (General.ArtistasSize == 0) {
                 MessageBox.Show("É necessário cadastrar ao menos um artista.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
-            }*/
+            }
 
             // Adicionar items na lista aqui
-            RefCodes.Add(1);
-            Compositor.Items.Add("Minha joaninha");
-            Artista.Items.Add("Minha joaninha");
+            //RefCodes.Add(1);
+            //Compositor.Items.Add("Minha joaninha");
+            //Artista.Items.Add("Minha joaninha");
 
             for (int i = 0; i < General.ArtistasSize; i++) {
                 RefCodes.Add(General.Artistas[i].Codigo);
                 Compositor.Items.Add(General.Artistas[i].NomeArtistico);
                 Artista.Items.Add(General.Artistas[i].NomeArtistico);
+            }
+
+            if (Index != -1) {
+                Cancao cancaoTemp = General.Cancoes[index];
+                Codigo.Text = cancaoTemp.Codigo.ToString();
+                Titulo.Text = cancaoTemp.Titulo;
+                Letra.Text = cancaoTemp.Letra;
+                Melodia.Text = cancaoTemp.Melodia;
+                Compositor.SelectedIndex = cancaoTemp.CodigoCompositor;
+                Artista.SelectedIndex = cancaoTemp.CodigoArtistaPrimeiraGravacao;
             }
         }
 
@@ -72,7 +73,7 @@ namespace data_structure_project_record_company {
             // TODO: Gerar codigo
             // TODO: Verificar se o codigo nao esta usado
 
-            if (Index == -1) { // Alterar metodo de insercao - deve ser ordenado pelo codigo
+            if (Index == -1) {
                 General.Cancoes[General.CancoesSize++] = new Cancao() {
                     Codigo = codigo,
                     Titulo = Titulo.Text,
@@ -81,6 +82,7 @@ namespace data_structure_project_record_company {
                     CodigoCompositor = RefCodes[Compositor.SelectedIndex],
                     CodigoArtistaPrimeiraGravacao = RefCodes[Artista.SelectedIndex]
                 };
+                // Sort
             }
             else {
                 General.Cancoes[Index] = new Cancao() {
@@ -96,7 +98,6 @@ namespace data_structure_project_record_company {
             Program.globalForm.UpdateRows(Form1.DataGrid.Musicas);
             Close();
         }
-
-
     }
+
 }

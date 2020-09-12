@@ -175,6 +175,7 @@
             this.Controls.Add(this.Salvar);
             this.Name = "CancaoForm";
             this.Text = "Adicionar Música";
+            this.Load += new System.EventHandler(this.CancaoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

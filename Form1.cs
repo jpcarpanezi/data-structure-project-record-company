@@ -103,11 +103,7 @@ namespace data_structure_project_record_company {
         }
 
         private void SongAdd_Click(object sender, EventArgs e) {
-            try { // Evita exception quando fecha o form ao antes de terminar de abrir
-                new CancaoForm().Show();
-            }
-            catch {
-            }
+            new CancaoForm().Show();
         }
 
         private void AlbumAdd_Click(object sender, EventArgs e) {
@@ -120,7 +116,7 @@ namespace data_structure_project_record_company {
         }
 
         private void ArtistAdd_Click(object sender, EventArgs e) {
-
+            new ArtistaForm().Show();
         }
 
         public void UpdateRows(DataGrid dataGrid) {
