@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace data_structure_project_record_company {
     static class Program {
-        public static Form1 globalForm;
+        public static Main globalForm;
 
         /// <summary>
         ///  The main entry point for the application.
@@ -16,7 +16,7 @@ namespace data_structure_project_record_company {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            globalForm = new Form1();
+            globalForm = new Main();
             Application.Run(globalForm);
         }
 

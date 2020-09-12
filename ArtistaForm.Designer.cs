@@ -179,24 +179,25 @@
             this.NAlbunsLancados.Location = new System.Drawing.Point(12, 286);
             this.NAlbunsLancados.Name = "NAlbunsLancados";
             this.NAlbunsLancados.Size = new System.Drawing.Size(188, 23);
-            this.NAlbunsLancados.TabIndex = 15;
+            this.NAlbunsLancados.TabIndex = 16;
             // 
             // NComposicoes
             // 
             this.NComposicoes.Location = new System.Drawing.Point(242, 286);
             this.NComposicoes.Name = "NComposicoes";
             this.NComposicoes.Size = new System.Drawing.Size(237, 23);
-            this.NComposicoes.TabIndex = 16;
+            this.NComposicoes.TabIndex = 17;
             // 
             // CacheMinimo
             // 
             this.CacheMinimo.Location = new System.Drawing.Point(518, 286);
             this.CacheMinimo.Name = "CacheMinimo";
             this.CacheMinimo.Size = new System.Drawing.Size(270, 23);
-            this.CacheMinimo.TabIndex = 17;
+            this.CacheMinimo.TabIndex = 18;
             // 
             // TipoTrabalho
             // 
+            this.TipoTrabalho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoTrabalho.FormattingEnabled = true;
             this.TipoTrabalho.Items.AddRange(new object[] {
             "Cantor",
@@ -205,7 +206,7 @@
             this.TipoTrabalho.Location = new System.Drawing.Point(518, 223);
             this.TipoTrabalho.Name = "TipoTrabalho";
             this.TipoTrabalho.Size = new System.Drawing.Size(270, 23);
-            this.TipoTrabalho.TabIndex = 18;
+            this.TipoTrabalho.TabIndex = 15;
             // 
             // label6
             // 

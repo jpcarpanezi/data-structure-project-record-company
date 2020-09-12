@@ -1,16 +1,16 @@
-﻿namespace data_structure_project_record_company{
-    partial class Form1{
+﻿namespace data_structure_project_record_company {
+    partial class Main {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing){
-            if (disposing && (components != null)){
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,10 +22,9 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.AlbumAdd = new System.Windows.Forms.Button();
             this.ArtistAdd = new System.Windows.Forms.Button();
@@ -61,14 +60,14 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "user-plus.png");
-            this.imageList1.Images.SetKeyName(1, "music.png");
-            this.imageList1.Images.SetKeyName(2, "record-vinyl.png");
-            this.imageList1.Images.SetKeyName(3, "search.png");
+            this.imageList1.Images.SetKeyName(0, "music.png");
+            this.imageList1.Images.SetKeyName(1, "record-vinyl.png");
+            this.imageList1.Images.SetKeyName(2, "search.png");
+            this.imageList1.Images.SetKeyName(3, "user-plus.png");
             // 
             // AlbumAdd
             // 
-            this.AlbumAdd.ImageIndex = 2;
+            this.AlbumAdd.ImageIndex = 1;
             this.AlbumAdd.ImageList = this.imageList1;
             this.AlbumAdd.Location = new System.Drawing.Point(71, 12);
             this.AlbumAdd.Name = "AlbumAdd";
@@ -79,7 +78,7 @@
             // 
             // ArtistAdd
             // 
-            this.ArtistAdd.ImageIndex = 0;
+            this.ArtistAdd.ImageIndex = 3;
             this.ArtistAdd.ImageList = this.imageList1;
             this.ArtistAdd.Location = new System.Drawing.Point(130, 12);
             this.ArtistAdd.Name = "ArtistAdd";
@@ -90,7 +89,7 @@
             // 
             // SongAdd
             // 
-            this.SongAdd.ImageIndex = 1;
+            this.SongAdd.ImageIndex = 0;
             this.SongAdd.ImageList = this.imageList1;
             this.SongAdd.Location = new System.Drawing.Point(12, 12);
             this.SongAdd.Name = "SongAdd";
@@ -250,7 +249,7 @@
             // 
             // Search
             // 
-            this.Search.ImageIndex = 3;
+            this.Search.ImageIndex = 2;
             this.Search.ImageList = this.imageList1;
             this.Search.Location = new System.Drawing.Point(189, 12);
             this.Search.Name = "Search";
@@ -259,7 +258,7 @@
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,9 +268,10 @@
             this.Controls.Add(this.SongAdd);
             this.Controls.Add(this.ArtistAdd);
             this.Controls.Add(this.AlbumAdd);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Recorder";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistas)).EndInit();
@@ -309,4 +309,3 @@
         private System.Windows.Forms.Button Search;
     }
 }
-

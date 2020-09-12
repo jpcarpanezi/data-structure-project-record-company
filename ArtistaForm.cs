@@ -60,16 +60,16 @@ namespace data_structure_project_record_company {
                 return;
             }
 
-            Artista.TipoTrabalho tipoTrabalho = TipoTrabalho.SelectedIndex switch
+            General.Artista.TipoTrabalho tipoTrabalho = TipoTrabalho.SelectedIndex switch
             {
-                0 => Artista.TipoTrabalho.Cantor,
-                1 => Artista.TipoTrabalho.Compositor,
-                2 => Artista.TipoTrabalho.Ambos,
+                0 => General.Artista.TipoTrabalho.Cantor,
+                1 => General.Artista.TipoTrabalho.Compositor,
+                2 => General.Artista.TipoTrabalho.Ambos,
                 _ => throw new IndexOutOfRangeException(),
             };
 
             if (Index == -1) {
-                General.Artistas[General.ArtistasSize++] = new Artista() {
+                General.Artistas[General.ArtistasSize++] = new General.Artista() {
                     Codigo = codigo,
                     NomeVerdadeiro = NomeVerdadeiro.Text,
                     NomeArtistico = NomeArtistico.Text,
@@ -88,7 +88,7 @@ namespace data_structure_project_record_company {
                 // Sort
             }
             else {
-                General.Artistas[Index] = new Artista() {
+                General.Artistas[Index] = new General.Artista() {
                     Codigo = codigo,
                     NomeVerdadeiro = NomeVerdadeiro.Text,
                     NomeArtistico = NomeArtistico.Text,
@@ -106,7 +106,7 @@ namespace data_structure_project_record_company {
                 };
             }
 
-            Program.globalForm.UpdateRows(Form1.DataGrid.Artistas);
+            Program.globalForm.UpdateRows(Main.DataGrid.Artistas);
             Close();
         }
     }

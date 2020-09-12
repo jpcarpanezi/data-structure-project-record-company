@@ -20,7 +20,6 @@ D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\bin\
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.dll
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\bin\Debug\netcoreapp3.1\data-structure-project-record-company.pdb
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.csprojAssemblyReference.cache
-D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data_structure_project_record_company.Form1.resources
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data_structure_project_record_company.Properties.Resources.resources
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.csproj.GenerateResource.cache
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data-structure-project-record-company.AssemblyInfoInputs.cache
@@ -32,3 +31,4 @@ D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data_structure_project_record_company.CancaoForm.resources
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data_structure_project_record_company.AlbumForm.resources
 D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data_structure_project_record_company.ArtistaForm.resources
+D:\Bibliotecas\Projetos Visual Studio\data-structure-project-record-company\obj\Debug\netcoreapp3.1\data_structure_project_record_company.Main.resources

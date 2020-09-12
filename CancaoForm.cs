@@ -49,7 +49,7 @@ namespace data_structure_project_record_company {
             }
 
             if (Index != -1) {
-                Cancao cancaoTemp = General.Cancoes[index];
+                General.Cancao cancaoTemp = General.Cancoes[Index];
                 Codigo.Text = cancaoTemp.Codigo.ToString();
                 Titulo.Text = cancaoTemp.Titulo;
                 Letra.Text = cancaoTemp.Letra;
@@ -74,7 +74,7 @@ namespace data_structure_project_record_company {
             // TODO: Verificar se o codigo nao esta usado
 
             if (Index == -1) {
-                General.Cancoes[General.CancoesSize++] = new Cancao() {
+                General.Cancoes[General.CancoesSize++] = new General.Cancao() {
                     Codigo = codigo,
                     Titulo = Titulo.Text,
                     Letra = Letra.Text,
@@ -85,7 +85,7 @@ namespace data_structure_project_record_company {
                 // Sort
             }
             else {
-                General.Cancoes[Index] = new Cancao() {
+                General.Cancoes[Index] = new General.Cancao() {
                     Codigo = General.Cancoes[Index].Codigo, // Codigo nao pode ser alterado
                     Titulo = Titulo.Text,
                     Letra = Letra.Text,
@@ -95,7 +95,7 @@ namespace data_structure_project_record_company {
                 };
             }
 
-            Program.globalForm.UpdateRows(Form1.DataGrid.Musicas);
+            Program.globalForm.UpdateRows(Main.DataGrid.Musicas);
             Close();
         }
     }
