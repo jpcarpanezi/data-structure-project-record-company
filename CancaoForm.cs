@@ -41,14 +41,20 @@ namespace data_structure_project_record_company {
                 Close();
             }
 
-            if (General.ArtistasSize == 0) {
+            /*if (General.ArtistasSize == 0) {
                 MessageBox.Show("É necessário cadastrar ao menos um artista.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
-            }
-            
+            }*/
+
+            // Adicionar items na lista aqui
+            RefCodes.Add(1);
+            Compositor.Items.Add("Minha joaninha");
+            Artista.Items.Add("Minha joaninha");
+
             for (int i = 0; i < General.ArtistasSize; i++) {
                 RefCodes.Add(General.Artistas[i].Codigo);
                 Compositor.Items.Add(General.Artistas[i].NomeArtistico);
+                Artista.Items.Add(General.Artistas[i].NomeArtistico);
             }
         }
 
