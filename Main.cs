@@ -69,9 +69,7 @@ namespace data_structure_project_record_company {
             else if (e.ColumnIndex == dataGridViewMusicas.Columns["Remover"].Index) {
                 if (MessageBox.Show("Tem certeza que deseja remover esta música?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
                     dataGridViewMusicas.Rows.RemoveAt(e.RowIndex);
-                    // TODO: Remover do vetor
-
-
+                    General.Cancao.RemoveAt(e.RowIndex);
                     General.CancoesSize--;
                 }
             }
@@ -87,7 +85,7 @@ namespace data_structure_project_record_company {
             else if (e.ColumnIndex == dataGridViewAlbuns.Columns["Remover"].Index) {
                 if (MessageBox.Show("Tem certeza que deseja remover este álbum?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
                     dataGridViewAlbuns.Rows.RemoveAt(e.RowIndex);
-                    // TODO: Remover do vetor
+                    General.Album.RemoveAt(e.RowIndex);
                     General.AlbumsSize--;
                 }
             }
@@ -103,7 +101,7 @@ namespace data_structure_project_record_company {
             else if (e.ColumnIndex == dataGridViewArtistas.Columns["Remover"].Index) {
                 if (MessageBox.Show("Tem certeza que deseja remover este artista?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
                     dataGridViewArtistas.Rows.RemoveAt(e.RowIndex);
-                    // TODO: Remover do vetor
+                    General.Artista.RemoveAt(e.RowIndex);
                     General.ArtistasSize--;
                 }
             }

@@ -60,13 +60,16 @@ namespace data_structure_project_record_company {
         }
 
         private void Salvar_Click(object sender, EventArgs e) {
-            if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") {
-                MessageBox.Show("O código precisa ser um número", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            string erro = "";
 
-            if (Titulo.Text == "" || Letra.Text == "" || Melodia.Text == "" || Compositor.SelectedIndex == -1 || Artista.SelectedIndex == -1) {
-                MessageBox.Show("Todos os campos precisam ser prenchidos com excessão do código", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "")
+                erro += "- O código precisa ser um número\n";
+
+            if (Titulo.Text == "" || Letra.Text == "" || Melodia.Text == "" || Compositor.SelectedIndex == -1 || Artista.SelectedIndex == -1)
+                erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
+
+            if (erro != "") {
+                MessageBox.Show(erro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

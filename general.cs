@@ -21,15 +21,11 @@ namespace data_structure_project_record_company {
             public long NumeroCopiasVendidas { get; set; }
             public string[] ArtistasParticipantes { get; set; }
 
-            /*public void RemoveAt(int index) {
-                Albums = Albums.Where()
-
-                for (int i = 0; i < AlbumsSize - 1; i++) {
-                    Albums[i] = Albums[i + 1];
-                }
-                Albums[AlbumsSize] = null;
-                AlbumsSize--;
-            }*/
+            public static void RemoveAt(int index) {
+                Album temp = Albums[index];
+                Albums = Albums.Where((a, idx) => idx != index).ToArray();
+                Array.Resize(ref Albums, MaxSize);
+            }
         }
 
         public struct Artista {
@@ -53,6 +49,12 @@ namespace data_structure_project_record_company {
             public int NumeroAlbunsLancados { get; set; }
             public int NumeroComposicoes { get; set; }
             public decimal CacheMinimo { get; set; }
+
+            public static void RemoveAt(int index) {
+                Artista temp = Artistas[index];
+                Artistas = Artistas.Where((a, idx) => idx != index).ToArray();
+                Array.Resize(ref Artistas, MaxSize);
+            }
         }
 
         public struct Cancao {
@@ -62,6 +64,11 @@ namespace data_structure_project_record_company {
             public string Melodia { get; set; }
             public int CodigoCompositor { get; set; }
             public int CodigoArtistaPrimeiraGravacao { get; set; }
+
+            public static void RemoveAt(int index) {
+                Cancoes = Cancoes.Where((a, idx) => idx != index).ToArray();
+                Array.Resize(ref Cancoes, MaxSize);
+            }
         }
 
     }

@@ -13,11 +13,32 @@ namespace data_structure_project_record_company {
         public ArtistaForm() {
             InitializeComponent();
             Index = -1;
+            Banda.Enabled = false;
         }
 
         public ArtistaForm(int index) {
             InitializeComponent();
             Index = index;
+            Banda.Enabled = false;
+
+            Codigo.Enabled = false;
+            General.Artista artistaTemp = General.Artistas[index];
+            Codigo.Text = artistaTemp.Codigo.ToString();
+            NomeVerdadeiro.Text = artistaTemp.NomeVerdadeiro;
+            NomeArtistico.Text = artistaTemp.NomeArtistico;
+            DataAniversario.Text = artistaTemp.Aniversario.ToString("d");
+            BandaSN.Checked = artistaTemp.BandaBool;
+            if (BandaSN.Checked)
+                Banda.Enabled = true;
+            Banda.Text = artistaTemp.NomeBanda;
+            Email.Text = artistaTemp.Email;
+            Telefone.Text = artistaTemp.Telefone;
+            NomeEmpresario.Text = artistaTemp.NomeEmpresario;
+            EmailEmpresario.Text = artistaTemp.EmailEmpresario;
+            TipoTrabalho.SelectedIndex = Convert.ToInt32(artistaTemp.TipoDeTrabalho) - 1;
+            NAlbunsLancados.Text = artistaTemp.NumeroAlbunsLancados.ToString();
+            NComposicoes.Text = artistaTemp.NumeroComposicoes.ToString();
+            CacheMinimo.Text = artistaTemp.CacheMinimo.ToString();
         }
 
         private void BandaSN_CheckedChanged(object sender, EventArgs e) {
@@ -30,33 +51,21 @@ namespace data_structure_project_record_company {
         }
 
         private void Salvar_Click(object sender, EventArgs e) {
-            if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") {
-                MessageBox.Show("O código precisa ser um número", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (NomeVerdadeiro.Text == "" || NomeArtistico.Text == "" || DataAniversario.Text == "" || (BandaSN.Checked && Banda.Text == "") || Email.Text == "" || Telefone.Text == "" || NomeEmpresario.Text == "" || EmailEmpresario.Text == "" || TipoTrabalho.SelectedIndex == -1 || NAlbunsLancados.Text == "" || NComposicoes.Text == "") {
-                MessageBox.Show("Todos os campos precisam ser prenchidos com excessão do código", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!DateTime.TryParse(DataAniversario.Text, out DateTime aniversario)) {
-                MessageBox.Show("O campo Data de Aniversário não está em um formato válido, utilize o formato dia/mês/ano", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!int.TryParse(NAlbunsLancados.Text, out int nAlbunsLancados)) {
-                MessageBox.Show("", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!int.TryParse(NComposicoes.Text, out int nComposicoes)) {
-                MessageBox.Show("", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!decimal.TryParse(CacheMinimo.Text, out decimal cacheMinimo)) {
-                MessageBox.Show("O campo Cache Mínimo não está em um formato válido, utilize o formato #.##", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            string erro = "";
+            if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") 
+                erro += "- O código precisa ser um número\n";
+            if (NomeVerdadeiro.Text == "" || NomeArtistico.Text == "" || DataAniversario.Text == "" || (BandaSN.Checked && Banda.Text == "") || Email.Text == "" || Telefone.Text == "" || NomeEmpresario.Text == "" || EmailEmpresario.Text == "" || TipoTrabalho.SelectedIndex == -1 || NAlbunsLancados.Text == "" || NComposicoes.Text == "") 
+                erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
+            if (!DateTime.TryParse(DataAniversario.Text, out DateTime aniversario)) 
+                erro += "- O campo Data de Aniversário não está em um formato válido, utilize o formato dia/mês/ano\n";
+            if (!int.TryParse(NAlbunsLancados.Text, out int nAlbunsLancados)) 
+                erro += "- O número de álbuns lançados precisa ser um número\n";            
+            if (!int.TryParse(NComposicoes.Text, out int nComposicoes)) 
+                erro += "- O número de composições precisa ser um número\n";
+            if (!decimal.TryParse(CacheMinimo.Text, out decimal cacheMinimo)) 
+                erro += "- O campo Cache Mínimo não está em um formato válido, utilize o formato #.##\n";
+            if (erro != "") {
+                MessageBox.Show(erro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -67,6 +76,9 @@ namespace data_structure_project_record_company {
                 2 => General.Artista.TipoTrabalho.Ambos,
                 _ => throw new IndexOutOfRangeException(),
             };
+
+            // TODO: Gerar codigo
+            // TODO: Verificar se o codigo nao esta usado
 
             if (Index == -1) {
                 General.Artistas[General.ArtistasSize++] = new General.Artista() {
@@ -89,7 +101,7 @@ namespace data_structure_project_record_company {
             }
             else {
                 General.Artistas[Index] = new General.Artista() {
-                    Codigo = codigo,
+                    Codigo = General.Artistas[Index].Codigo,
                     NomeVerdadeiro = NomeVerdadeiro.Text,
                     NomeArtistico = NomeArtistico.Text,
                     Aniversario = aniversario,
