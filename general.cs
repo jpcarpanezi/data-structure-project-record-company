@@ -21,7 +21,7 @@ namespace data_structure_project_record_company {
             public long NumeroCopiasVendidas { get; set; }
             public string[] ArtistasParticipantes { get; set; }
 
-            public void RemoveAt(int index) {
+            /*public void RemoveAt(int index) {
                 Albums = Albums.Where()
 
                 for (int i = 0; i < AlbumsSize - 1; i++) {
@@ -29,7 +29,7 @@ namespace data_structure_project_record_company {
                 }
                 Albums[AlbumsSize] = null;
                 AlbumsSize--;
-            }
+            }*/
         }
 
         public struct Artista {
