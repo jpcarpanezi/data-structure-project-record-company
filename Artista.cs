@@ -15,7 +15,7 @@ namespace data_structure_project_record_company
         public string NomeVerdadeiro { get; set; }
         public string NomeArtistico { get; set; }
         public DateTime Aniversario { get; set; }
-        public string BandaSN { get; set; }
+        public bool BandaBool { get; set; }
         public string NomeBanda { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }

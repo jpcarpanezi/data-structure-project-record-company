@@ -8,7 +8,7 @@ namespace data_structure_project_record_company
         public int Codigo { get; set; }
         public string Titulo { get; set; }
         public string Letra { get; set; }
-        // TODO: Melodia
+        public string Melodia { get; set; }
         public int CodigoCompositor { get; set; }
         public int CodigoArtistaPrimeiraGravacao { get; set; }
     }

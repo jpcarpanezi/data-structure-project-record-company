@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\JP\\.nuget\\packages\\": {}
+    "C:\\Users\\muril\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio Projects\\data-structure-project-record-company\\data-structure-project-record-company.csproj",
+      "projectUniqueName": "D:\\Bibliotecas\\Projetos Visual Studio\\data-structure-project-record-company\\data-structure-project-record-company.csproj",
       "projectName": "data-structure-project-record-company",
-      "projectPath": "D:\\Visual Studio Projects\\data-structure-project-record-company\\data-structure-project-record-company.csproj",
-      "packagesPath": "C:\\Users\\JP\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio Projects\\data-structure-project-record-company\\obj\\",
+      "projectPath": "D:\\Bibliotecas\\Projetos Visual Studio\\data-structure-project-record-company\\data-structure-project-record-company.csproj",
+      "packagesPath": "C:\\Users\\muril\\.nuget\\packages\\",
+      "outputPath": "D:\\Bibliotecas\\Projetos Visual Studio\\data-structure-project-record-company\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\muril\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
