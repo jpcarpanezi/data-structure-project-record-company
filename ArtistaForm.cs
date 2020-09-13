@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -70,9 +71,9 @@ namespace data_structure_project_record_company {
             if (!decimal.TryParse(CacheMinimo.Text, out decimal cacheMinimo)) 
                 erro += "- O campo Cache Mínimo não está em um formato válido, utilize o formato #.##\n";
 
-            if (Index == -1 && BinarySearch.BinarySearchDisplay(Array.ConvertAll(General.Artistas, a => a.Codigo), codigo) != -1)
+            if (Index == -1 && BinarySearch.BinarySearchDisplay(Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray(), codigo) != -1)
                 erro += "- Este código já está sendo utilizado\n";
-
+            
             if (erro != "") {
                 MessageBox.Show(erro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
