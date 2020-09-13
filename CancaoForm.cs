@@ -77,7 +77,12 @@ namespace data_structure_project_record_company {
                 return;
             }
 
-            // TODO: Gerar codigo
+            if (Codigo.Text == "") {
+                if (General.CancoesSize == 0)
+                    codigo = 1;
+                else
+                    codigo = General.Cancoes[General.CancoesSize - 1].Codigo + 1;
+            }
 
             if (Index == -1) {
                 General.Cancoes[General.CancoesSize++] = new General.Cancao() {
