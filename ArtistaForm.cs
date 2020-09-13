@@ -56,8 +56,8 @@ namespace data_structure_project_record_company {
             if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") 
                 erro += "- O código precisa ser um número\n";
 
-            if (codigo <= 0)
-                erro += "- O código precisa ser maior que zero";
+            if (codigo <= 0 && Codigo.Text != "")
+                erro += "- O código precisa ser maior que zero\n";
 
             if (NomeVerdadeiro.Text == "" || NomeArtistico.Text == "" || DataAniversario.Text == "" || (BandaSN.Checked && Banda.Text == "") || Email.Text == "" || Telefone.Text == "" || NomeEmpresario.Text == "" || EmailEmpresario.Text == "" || TipoTrabalho.SelectedIndex == -1 || NAlbunsLancados.Text == "" || NComposicoes.Text == "") 
                 erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
@@ -76,7 +76,10 @@ namespace data_structure_project_record_company {
 
             if (Index == -1 && BinarySearch.BinarySearchDisplay(Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray(), codigo) != -1)
                 erro += "- Este código já está sendo utilizado\n";
-            
+
+            int teste = Array.IndexOf(Array.ConvertAll(General.Artistas, a => a.Codigo), 2);
+
+
             if (erro != "") {
                 MessageBox.Show(erro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -90,7 +93,12 @@ namespace data_structure_project_record_company {
                 _ => throw new IndexOutOfRangeException(),
             };
 
-            // TODO: Gerar codigo
+            if (Codigo.Text == "") {
+                if (General.ArtistasSize == 0)
+                    codigo = 1;
+                else
+                    codigo = General.Artistas[General.ArtistasSize - 1].Codigo + 1;
+            }
 
             if (Index == -1) {
                 General.Artistas[General.ArtistasSize++] = new General.Artista() {
@@ -110,7 +118,7 @@ namespace data_structure_project_record_company {
                     CacheMinimo = cacheMinimo
                 };
 
-                MergeSort.MainMergeSort(Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray(), 0, Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray().Length - 1);
+                MergeSort.Sort(General.Artistas, Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray());
             }
             else {
                 General.Artistas[Index] = new General.Artista() {
