@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
@@ -65,6 +66,9 @@ namespace data_structure_project_record_company {
             if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "")
                 erro += "- O código precisa ser um número\n";
 
+            if(codigo <= 0 && Codigo.Text != "")
+                erro += "- O código precisa ser maior que zero\n";
+
             if (Titulo.Text == "" || Letra.Text == "" || Melodia.Text == "" || Compositor.SelectedIndex == -1 || Artista.SelectedIndex == -1)
                 erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
 
@@ -74,7 +78,6 @@ namespace data_structure_project_record_company {
             }
 
             // TODO: Gerar codigo
-            // TODO: Verificar se o codigo nao esta usado
 
             if (Index == -1) {
                 General.Cancoes[General.CancoesSize++] = new General.Cancao() {
@@ -85,7 +88,8 @@ namespace data_structure_project_record_company {
                     CodigoCompositor = RefCodes[Compositor.SelectedIndex],
                     CodigoArtistaPrimeiraGravacao = RefCodes[Artista.SelectedIndex]
                 };
-                // Sort
+
+                MergeSort.Sort(General.Cancoes, Array.ConvertAll(General.Cancoes, a => a.Codigo).Where(a => a > 0).ToArray());
             }
             else {
                 General.Cancoes[Index] = new General.Cancao() {
