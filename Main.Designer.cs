@@ -128,7 +128,6 @@
 			this.dataGridViewArtistas.Size = new System.Drawing.Size(760, 251);
 			this.dataGridViewArtistas.TabIndex = 0;
 			this.dataGridViewArtistas.Text = "dataGridView3";
-			this.dataGridViewArtistas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArtistas_CellContentClick);
 			// 
 			// Codigo
 			// 
