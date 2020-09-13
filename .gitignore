@@ -1,7 +1,7 @@
 #*.sln
 #*.csproj
 #*.user
-#.vs/
+.vs/
 #bin/
 #obj/
 
