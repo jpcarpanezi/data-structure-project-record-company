@@ -49,6 +49,20 @@ namespace data_structure_project_record_company {
                 ListaMusicas.Items.Add(General.Cancoes[i].Titulo);
                 RefCodesMusicas.Add(General.Cancoes[i].Codigo);
             }
+
+            if (Index != -1) {
+                General.Album albumTemp = General.Albums[Index];
+                Codigo.Text = albumTemp.Codigo.ToString();
+                Titulo.Text = albumTemp.Titulo;
+                DataLancamento.Text = albumTemp.DataLancamento.ToString("d");
+                NCopiasVendidas.Text = albumTemp.NumeroCopiasVendidas.ToString();
+                for (int i = 0; i < albumTemp.CodigosMusicas.Length; i++) {
+                    ListaMusicas.SetItemChecked(BinarySearch.BinarySearchDisplay(RefCodesMusicas, albumTemp.CodigosMusicas[i]), true);
+                }
+                for (int i = 0; i < albumTemp.ArtistasParticipantes.Length; i++) {
+                    ArtistasParticipantes.SetItemChecked(BinarySearch.BinarySearchDisplay(RefCodesArtistas, albumTemp.ArtistasParticipantes[i]), true);
+                }
+            }
         }
 
         private void Salvar_Click(object sender, EventArgs e) {
@@ -84,13 +98,13 @@ namespace data_structure_project_record_company {
             int[] indicesMusicas = ListaMusicas.CheckedIndices.Cast<int>().ToArray();
             List<int> codigosMusicas = new List<int>();
             for (int i = 0; i < indicesMusicas.Length; i++) {
-                codigosMusicas.Add(RefCodesMusicas[i]);
+                codigosMusicas.Add(RefCodesMusicas[indicesMusicas[i]]);
             }
 
             int[] indicesArtistas = ArtistasParticipantes.CheckedIndices.Cast<int>().ToArray();
             List<int> codigosArtistas = new List<int>();
             for (int i = 0; i < indicesArtistas.Length; i++) {
-                codigosArtistas.Add(RefCodesArtistas[i]);
+                codigosArtistas.Add(RefCodesArtistas[indicesArtistas[i]]);
             }
 
             if (Index == -1) {

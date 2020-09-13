@@ -51,9 +51,7 @@ namespace data_structure_project_record_company {
                 Letra.Text = cancaoTemp.Letra;
                 Melodia.Text = cancaoTemp.Melodia;
                 Compositor.SelectedIndex = BinarySearch.BinarySearchDisplay(RefCodes, cancaoTemp.CodigoCompositor);
-                //Compositor.SelectedIndex = cancaoTemp.CodigoCompositor;
                 Artista.SelectedIndex = BinarySearch.BinarySearchDisplay(RefCodes, cancaoTemp.CodigoArtistaPrimeiraGravacao);
-                //Artista.SelectedIndex = cancaoTemp.CodigoArtistaPrimeiraGravacao;
             }
         }
 
