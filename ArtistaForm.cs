@@ -53,17 +53,23 @@ namespace data_structure_project_record_company {
         private void Salvar_Click(object sender, EventArgs e) {
             string erro = "";
             if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") 
-                erro += "- O código precisa ser um número\n";
+                erro += "- O código precisa ser um número\n";
+
             if (NomeVerdadeiro.Text == "" || NomeArtistico.Text == "" || DataAniversario.Text == "" || (BandaSN.Checked && Banda.Text == "") || Email.Text == "" || Telefone.Text == "" || NomeEmpresario.Text == "" || EmailEmpresario.Text == "" || TipoTrabalho.SelectedIndex == -1 || NAlbunsLancados.Text == "" || NComposicoes.Text == "") 
-                erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
+                erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
+
             if (!DateTime.TryParse(DataAniversario.Text, out DateTime aniversario)) 
-                erro += "- O campo Data de Aniversário não está em um formato válido, utilize o formato dia/mês/ano\n";
+                erro += "- O campo Data de Aniversário não está em um formato válido, utilize o formato dia/mês/ano\n";
+
             if (!int.TryParse(NAlbunsLancados.Text, out int nAlbunsLancados)) 
-                erro += "- O número de álbuns lançados precisa ser um número\n";            
+                erro += "- O número de álbuns lançados precisa ser um número\n";
+            
             if (!int.TryParse(NComposicoes.Text, out int nComposicoes)) 
-                erro += "- O número de composições precisa ser um número\n";
+                erro += "- O número de composições precisa ser um número\n";
+
             if (!decimal.TryParse(CacheMinimo.Text, out decimal cacheMinimo)) 
-                erro += "- O campo Cache Mínimo não está em um formato válido, utilize o formato #.##\n";
+                erro += "- O campo Cache Mínimo não está em um formato válido, utilize o formato #.##\n";
+
             if (erro != "") {
                 MessageBox.Show(erro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -162,7 +162,7 @@ namespace data_structure_project_record_company {
         }
 
         private void Search_Click(object sender, EventArgs e) {
-
+            new Search().Show();
         }
     }
 }
