@@ -116,6 +116,7 @@
 			// dataGridViewArtistas
 			// 
 			this.dataGridViewArtistas.AllowUserToAddRows = false;
+			this.dataGridViewArtistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridViewArtistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewArtistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -168,6 +169,7 @@
 			// dataGridViewAlbuns
 			// 
 			this.dataGridViewAlbuns.AllowUserToAddRows = false;
+			this.dataGridViewAlbuns.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridViewAlbuns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewAlbuns.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoAlbum,
@@ -225,6 +227,7 @@
 			// dataGridViewMusicas
 			// 
 			this.dataGridViewMusicas.AllowUserToAddRows = false;
+			this.dataGridViewMusicas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridViewMusicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMusicas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SongCodigo,
