@@ -86,7 +86,7 @@ namespace data_structure_project_record_company {
                 if (IsFormOpen("AlbumForm"))
                     MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    MessageBox.Show("Oi");
+                    new AlbumForm(e.RowIndex).Show();
             }
             else if (e.ColumnIndex == dataGridViewAlbuns.Columns["Remover"].Index) {
                 if (MessageBox.Show("Tem certeza que deseja remover este álbum?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
@@ -124,11 +124,6 @@ namespace data_structure_project_record_company {
         }
 
         private void AlbumAdd_Click(object sender, EventArgs e) {
-            if (General.AlbumsSize >= General.MaxSize) { // TODO: Mover para dentro do form
-                MessageBox.Show("O limite de espaço para álbuns foi atingido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             if (IsFormOpen("AlbumForm"))
                 MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else

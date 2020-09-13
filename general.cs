@@ -19,7 +19,7 @@ namespace data_structure_project_record_company {
             public int[] CodigosMusicas { get; set; }
             public DateTime DataLancamento { get; set; }
             public long NumeroCopiasVendidas { get; set; }
-            public string[] ArtistasParticipantes { get; set; }
+            public int[] ArtistasParticipantes { get; set; }
 
             public static void RemoveAt(int index) {
                 Album temp = Albums[index];

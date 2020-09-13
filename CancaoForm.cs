@@ -38,11 +38,6 @@ namespace data_structure_project_record_company {
                 Close();
             }
 
-            // Adicionar items na lista aqui
-            //RefCodes.Add(1);
-            //Compositor.Items.Add("Minha joaninha");
-            //Artista.Items.Add("Minha joaninha");
-
             for (int i = 0; i < General.ArtistasSize; i++) {
                 RefCodes.Add(General.Artistas[i].Codigo);
                 Compositor.Items.Add(General.Artistas[i].NomeArtistico);
@@ -55,8 +50,10 @@ namespace data_structure_project_record_company {
                 Titulo.Text = cancaoTemp.Titulo;
                 Letra.Text = cancaoTemp.Letra;
                 Melodia.Text = cancaoTemp.Melodia;
-                Compositor.SelectedIndex = cancaoTemp.CodigoCompositor;
-                Artista.SelectedIndex = cancaoTemp.CodigoArtistaPrimeiraGravacao;
+                Compositor.SelectedIndex = BinarySearch.BinarySearchDisplay(RefCodes, cancaoTemp.CodigoCompositor);
+                //Compositor.SelectedIndex = cancaoTemp.CodigoCompositor;
+                Artista.SelectedIndex = BinarySearch.BinarySearchDisplay(RefCodes, cancaoTemp.CodigoArtistaPrimeiraGravacao);
+                //Artista.SelectedIndex = cancaoTemp.CodigoArtistaPrimeiraGravacao;
             }
         }
 
