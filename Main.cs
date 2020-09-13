@@ -64,7 +64,10 @@ namespace data_structure_project_record_company {
                 return;
 
             if (e.ColumnIndex == dataGridViewMusicas.Columns["Editar"].Index) {
-                new CancaoForm(e.RowIndex).Show();
+                if (IsFormOpen("CancaoForm"))
+                    MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    new CancaoForm(e.RowIndex).Show();
             }
             else if (e.ColumnIndex == dataGridViewMusicas.Columns["Remover"].Index) {
                 if (MessageBox.Show("Tem certeza que deseja remover esta música?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
@@ -80,7 +83,10 @@ namespace data_structure_project_record_company {
                 return;
 
             if (e.ColumnIndex == dataGridViewAlbuns.Columns["Editar"].Index) {
-                MessageBox.Show("Oi");
+                if (IsFormOpen("AlbumForm"))
+                    MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Oi");
             }
             else if (e.ColumnIndex == dataGridViewAlbuns.Columns["Remover"].Index) {
                 if (MessageBox.Show("Tem certeza que deseja remover este álbum?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
@@ -96,7 +102,10 @@ namespace data_structure_project_record_company {
                 return;
 
             if (e.ColumnIndex == dataGridViewArtistas.Columns["Editar"].Index) {
-                new ArtistaForm(e.RowIndex).Show();
+                if (IsFormOpen("ArtistaForm"))
+                    MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    new ArtistaForm(e.RowIndex).Show();
             }
             else if (e.ColumnIndex == dataGridViewArtistas.Columns["Remover"].Index) {
                 if (MessageBox.Show("Tem certeza que deseja remover este artista?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
@@ -108,7 +117,10 @@ namespace data_structure_project_record_company {
         }
 
         private void SongAdd_Click(object sender, EventArgs e) {
-            new CancaoForm().Show();
+            if (IsFormOpen("CancaoForm"))
+                MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                new CancaoForm().Show();
         }
 
         private void AlbumAdd_Click(object sender, EventArgs e) {
@@ -117,11 +129,17 @@ namespace data_structure_project_record_company {
                 return;
             }
 
-            new AlbumForm().Show();
+            if (IsFormOpen("AlbumForm"))
+                MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                new AlbumForm().Show();
         }
 
         private void ArtistAdd_Click(object sender, EventArgs e) {
-            new ArtistaForm().Show();
+            if (IsFormOpen("ArtistaForm"))
+                MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                new ArtistaForm().Show();
         }
 
         public void UpdateRows(DataGrid dataGrid) {
@@ -163,6 +181,15 @@ namespace data_structure_project_record_company {
 
         private void Search_Click(object sender, EventArgs e) {
             new Search().Show();
+        }
+
+        private bool IsFormOpen(string name) {
+            foreach (Form form in Application.OpenForms) {
+                if (form.Name == name)
+                    return true;
+            }
+
+            return false;
         }
     }
 }
