@@ -58,6 +58,7 @@
 			// 
 			this.Codigo.Location = new System.Drawing.Point(12, 34);
 			this.Codigo.Name = "Codigo";
+			this.Codigo.PlaceholderText = "Insira o código";
 			this.Codigo.Size = new System.Drawing.Size(188, 23);
 			this.Codigo.TabIndex = 0;
 			// 
@@ -65,6 +66,7 @@
 			// 
 			this.NomeVerdadeiro.Location = new System.Drawing.Point(242, 34);
 			this.NomeVerdadeiro.Name = "NomeVerdadeiro";
+			this.NomeVerdadeiro.PlaceholderText = "Insira o nome completo";
 			this.NomeVerdadeiro.Size = new System.Drawing.Size(237, 23);
 			this.NomeVerdadeiro.TabIndex = 1;
 			// 
@@ -72,6 +74,7 @@
 			// 
 			this.NomeArtistico.Location = new System.Drawing.Point(518, 34);
 			this.NomeArtistico.Name = "NomeArtistico";
+			this.NomeArtistico.PlaceholderText = "Insira o nome artistico";
 			this.NomeArtistico.Size = new System.Drawing.Size(270, 23);
 			this.NomeArtistico.TabIndex = 2;
 			// 
@@ -106,6 +109,7 @@
 			// 
 			this.DataAniversario.Location = new System.Drawing.Point(12, 100);
 			this.DataAniversario.Name = "DataAniversario";
+			this.DataAniversario.PlaceholderText = "dd/mm/YYYY";
 			this.DataAniversario.Size = new System.Drawing.Size(188, 23);
 			this.DataAniversario.TabIndex = 6;
 			// 
@@ -143,6 +147,7 @@
 			this.Banda.Enabled = false;
 			this.Banda.Location = new System.Drawing.Point(518, 98);
 			this.Banda.Name = "Banda";
+			this.Banda.PlaceholderText = "Insira o nome da banda";
 			this.Banda.Size = new System.Drawing.Size(270, 23);
 			this.Banda.TabIndex = 10;
 			// 
@@ -150,6 +155,7 @@
 			// 
 			this.Email.Location = new System.Drawing.Point(12, 165);
 			this.Email.Name = "Email";
+			this.Email.PlaceholderText = "artista@exemplo.com";
 			this.Email.Size = new System.Drawing.Size(188, 23);
 			this.Email.TabIndex = 11;
 			// 
@@ -157,6 +163,7 @@
 			// 
 			this.Telefone.Location = new System.Drawing.Point(241, 165);
 			this.Telefone.Name = "Telefone";
+			this.Telefone.PlaceholderText = "(00) 90000-0000";
 			this.Telefone.Size = new System.Drawing.Size(238, 23);
 			this.Telefone.TabIndex = 12;
 			// 
@@ -164,6 +171,7 @@
 			// 
 			this.NomeEmpresario.Location = new System.Drawing.Point(12, 223);
 			this.NomeEmpresario.Name = "NomeEmpresario";
+			this.NomeEmpresario.PlaceholderText = "Insira o nome do empresário";
 			this.NomeEmpresario.Size = new System.Drawing.Size(188, 23);
 			this.NomeEmpresario.TabIndex = 13;
 			// 
@@ -171,6 +179,7 @@
 			// 
 			this.EmailEmpresario.Location = new System.Drawing.Point(241, 223);
 			this.EmailEmpresario.Name = "EmailEmpresario";
+			this.EmailEmpresario.PlaceholderText = "empresario@exemplo.com";
 			this.EmailEmpresario.Size = new System.Drawing.Size(238, 23);
 			this.EmailEmpresario.TabIndex = 14;
 			// 
@@ -178,6 +187,7 @@
 			// 
 			this.NAlbunsLancados.Location = new System.Drawing.Point(12, 286);
 			this.NAlbunsLancados.Name = "NAlbunsLancados";
+			this.NAlbunsLancados.PlaceholderText = "Insira o número de álbuns";
 			this.NAlbunsLancados.Size = new System.Drawing.Size(188, 23);
 			this.NAlbunsLancados.TabIndex = 16;
 			// 
@@ -185,6 +195,7 @@
 			// 
 			this.NComposicoes.Location = new System.Drawing.Point(242, 286);
 			this.NComposicoes.Name = "NComposicoes";
+			this.NComposicoes.PlaceholderText = "Insira o número de composições";
 			this.NComposicoes.Size = new System.Drawing.Size(237, 23);
 			this.NComposicoes.TabIndex = 17;
 			// 
@@ -192,6 +203,7 @@
 			// 
 			this.CacheMinimo.Location = new System.Drawing.Point(518, 286);
 			this.CacheMinimo.Name = "CacheMinimo";
+			this.CacheMinimo.PlaceholderText = "Insira o cache mínimo";
 			this.CacheMinimo.Size = new System.Drawing.Size(270, 23);
 			this.CacheMinimo.TabIndex = 18;
 			// 
