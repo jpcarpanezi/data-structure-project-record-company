@@ -5,7 +5,6 @@ using System.Text;
 
 namespace data_structure_project_record_company {
 	public class MergeSort {
-		// MergeSort 2
 		public static void Merge(int[] input, int left, int middle, int right){
 			int[] leftArray = new int[middle - left + 1];
 			int[] rightArray = new int[right - middle];

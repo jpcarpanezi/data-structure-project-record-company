@@ -56,6 +56,9 @@ namespace data_structure_project_record_company {
             if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") 
                 erro += "- O código precisa ser um número\n";
 
+            if (codigo <= 0)
+                erro += "- O código precisa ser maior que zero";
+
             if (NomeVerdadeiro.Text == "" || NomeArtistico.Text == "" || DataAniversario.Text == "" || (BandaSN.Checked && Banda.Text == "") || Email.Text == "" || Telefone.Text == "" || NomeEmpresario.Text == "" || EmailEmpresario.Text == "" || TipoTrabalho.SelectedIndex == -1 || NAlbunsLancados.Text == "" || NComposicoes.Text == "") 
                 erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
 
@@ -88,7 +91,6 @@ namespace data_structure_project_record_company {
             };
 
             // TODO: Gerar codigo
-            // TODO: Verificar se o codigo nao esta usado
 
             if (Index == -1) {
                 General.Artistas[General.ArtistasSize++] = new General.Artista() {
@@ -107,7 +109,8 @@ namespace data_structure_project_record_company {
                     NumeroComposicoes = nComposicoes, 
                     CacheMinimo = cacheMinimo
                 };
-                // Sort
+
+                MergeSort.MainMergeSort(Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray(), 0, Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray().Length - 1);
             }
             else {
                 General.Artistas[Index] = new General.Artista() {
