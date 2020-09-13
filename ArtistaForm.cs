@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace data_structure_project_record_company {
@@ -51,6 +53,14 @@ namespace data_structure_project_record_company {
             }
         }
 
+        private bool ValidateMail(String email){
+            if(Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z")){
+                return true;
+			}else{
+                return false;
+			}
+		}
+
         private void Salvar_Click(object sender, EventArgs e) {
             string erro = "";
             if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") 
@@ -77,8 +87,11 @@ namespace data_structure_project_record_company {
             if (Index == -1 && BinarySearch.BinarySearchDisplay(Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray(), codigo) != -1)
                 erro += "- Este código já está sendo utilizado\n";
 
-            int teste = Array.IndexOf(Array.ConvertAll(General.Artistas, a => a.Codigo), 2);
+            if (!ValidateMail(Email.Text))
+                erro += "- Formato de e-mail do artista inválido, tente o formato email@exemplo.com\n";
 
+            if (!ValidateMail(EmailEmpresario.Text))
+                erro += "- Formato de e-mail do empresário inválido, tente o formato email@exemplo.com\n";
 
             if (erro != "") {
                 MessageBox.Show(erro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
