@@ -62,6 +62,7 @@ namespace data_structure_project_record_company {
         }
 
         private void InserirDadosIniciais() {
+            #region Artistas
             General.Artistas[0] = new General.Artista() {
                 Codigo = 1,
                 NomeVerdadeiro = "Saul Hudson",
@@ -135,8 +136,217 @@ namespace data_structure_project_record_company {
             General.ArtistasSize++;
 
             UpdateRows(DataGrid.Artistas);
+            #endregion
 
-            
+            #region CancoesSlash
+            General.Cancoes[0] = new General.Cancao() {
+                Codigo = 1,
+                Titulo = "World on Fire",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 1,
+                CodigoArtistaPrimeiraGravacao = 1
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[1] = new General.Cancao() {
+                Codigo = 2,
+                Titulo = "Shadow Life",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 1,
+                CodigoArtistaPrimeiraGravacao = 1
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[2] = new General.Cancao() {
+                Codigo = 3,
+                Titulo = "Automatic Overdrive",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 1,
+                CodigoArtistaPrimeiraGravacao = 1
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[3] = new General.Cancao() {
+                Codigo = 4,
+                Titulo = "Wicked Stone",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 1,
+                CodigoArtistaPrimeiraGravacao = 1
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[4] = new General.Cancao() {
+                Codigo = 5,
+                Titulo = "30 Years to Life",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 1,
+                CodigoArtistaPrimeiraGravacao = 1
+            };
+            General.CancoesSize++;
+            #endregion
+
+            #region CancoesKiko
+            General.Cancoes[5] = new General.Cancao() {
+                Codigo = 6,
+                Titulo = "OVERFLOW",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 2,
+                CodigoArtistaPrimeiraGravacao = 2
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[6] = new General.Cancao() {
+                Codigo = 7,
+                Titulo = "EDM (E-DEPENDENT MIND)",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 2,
+                CodigoArtistaPrimeiraGravacao = 2
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[7] = new General.Cancao() {
+                Codigo = 8,
+                Titulo = "IMMINENT THREAT",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 2,
+                CodigoArtistaPrimeiraGravacao = 2
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[8] = new General.Cancao() {
+                Codigo = 9,
+                Titulo = "LIQUID TIMES",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 2,
+                CodigoArtistaPrimeiraGravacao = 2
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[9] = new General.Cancao() {
+                Codigo = 10,
+                Titulo = "SERTAO",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 2,
+                CodigoArtistaPrimeiraGravacao = 2
+            };
+            General.CancoesSize++;
+            #endregion
+
+            #region CancoesAdrian
+            General.Cancoes[10] = new General.Cancao() {
+                Codigo = 11,
+                Titulo = "Somewhere in Time",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 3,
+                CodigoArtistaPrimeiraGravacao = 3
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[11] = new General.Cancao() {
+                Codigo = 12,
+                Titulo = "The Old Woman",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 3,
+                CodigoArtistaPrimeiraGravacao = 3
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[12] = new General.Cancao() {
+                Codigo = 13,
+                Titulo = "The Journey Back in Time",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 3,
+                CodigoArtistaPrimeiraGravacao = 3
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[13] = new General.Cancao() {
+                Codigo = 14,
+                Titulo = "A Day Together",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 3,
+                CodigoArtistaPrimeiraGravacao = 3
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[14] = new General.Cancao() {
+                Codigo = 15,
+                Titulo = "Rhapsody on a Theme of Paganini",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 3,
+                CodigoArtistaPrimeiraGravacao = 3
+            };
+            General.CancoesSize++;
+            #endregion
+
+            #region CancoesEddie
+            General.Cancoes[15] = new General.Cancao() {
+                Codigo = 16,
+                Titulo = "Setting Forth",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 4,
+                CodigoArtistaPrimeiraGravacao = 4
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[16] = new General.Cancao() {
+                Codigo = 17,
+                Titulo = "No Ceiling",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 4,
+                CodigoArtistaPrimeiraGravacao = 4
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[17] = new General.Cancao() {
+                Codigo = 18,
+                Titulo = "Far Behind",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 4,
+                CodigoArtistaPrimeiraGravacao = 4
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[18] = new General.Cancao() {
+                Codigo = 19,
+                Titulo = "Rise",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 4,
+                CodigoArtistaPrimeiraGravacao = 4
+            };
+            General.CancoesSize++;
+
+            General.Cancoes[19] = new General.Cancao() {
+                Codigo = 20,
+                Titulo = "Long Nights",
+                Letra = "",
+                Melodia = "",
+                CodigoCompositor = 4,
+                CodigoArtistaPrimeiraGravacao = 4
+            };
+            General.CancoesSize++;
+            #endregion
+
+            UpdateRows(DataGrid.Musicas);
         }
 
         private void dataGridViewMusicas_CellClick(object sender, DataGridViewCellEventArgs e) {
