@@ -49,6 +49,7 @@
             this.SongTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.Search = new System.Windows.Forms.Button();
+            this.GerarRelatorio = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlbuns)).BeginInit();
@@ -64,6 +65,7 @@
             this.imageList1.Images.SetKeyName(1, "record-vinyl.png");
             this.imageList1.Images.SetKeyName(2, "search.png");
             this.imageList1.Images.SetKeyName(3, "user-plus.png");
+            this.imageList1.Images.SetKeyName(4, "file.png");
             // 
             // AlbumAdd
             // 
@@ -261,11 +263,23 @@
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
+            // GerarRelatorio
+            // 
+            this.GerarRelatorio.ImageIndex = 4;
+            this.GerarRelatorio.ImageList = this.imageList1;
+            this.GerarRelatorio.Location = new System.Drawing.Point(248, 12);
+            this.GerarRelatorio.Name = "GerarRelatorio";
+            this.GerarRelatorio.Size = new System.Drawing.Size(53, 53);
+            this.GerarRelatorio.TabIndex = 0;
+            this.GerarRelatorio.UseVisualStyleBackColor = true;
+            this.GerarRelatorio.Click += new System.EventHandler(this.GerarRelatorio_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 961);
+            this.Controls.Add(this.GerarRelatorio);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SongAdd);
@@ -310,5 +324,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BandaBool;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Button GerarRelatorio;
     }
 }

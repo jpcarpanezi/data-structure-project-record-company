@@ -57,6 +57,86 @@ namespace data_structure_project_record_company {
             };
             dataGridViewArtistas.Columns.Add(buttonColumn);
             dataGridViewArtistas.CellClick += dataGridViewArtistas_CellClick;
+            
+            InserirDadosIniciais();
+        }
+
+        private void InserirDadosIniciais() {
+            General.Artistas[0] = new General.Artista() {
+                Codigo = 1,
+                NomeVerdadeiro = "Saul Hudson",
+                NomeArtistico = "Slash",
+                Aniversario = Convert.ToDateTime("23/07/1965"),
+                BandaBool = true,
+                NomeBanda = "Guns N'Roses",
+                Email = "slash@armaserosas.com",
+                Telefone = "+5511987654321",
+                NomeEmpresario = "Empresário do Slash",
+                EmailEmpresario = "empresario@slash.com",
+                TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
+                NumeroAlbunsLancados = 0,
+                NumeroComposicoes = 0,
+                CacheMinimo = 100000
+            };
+            General.ArtistasSize++;
+
+            General.Artistas[1] = new General.Artista() {
+                Codigo = 2,
+                NomeVerdadeiro = "Pedro Henrique Loureiro",
+                NomeArtistico = "Kiko Loureiro",
+                Aniversario = Convert.ToDateTime("16/06/1972"),
+                BandaBool = true,
+                NomeBanda = "Megadeth",
+                Email = "pedrinho123@megadeth.com",
+                Telefone = "+5511987654321",
+                NomeEmpresario = "Empresário do pedro",
+                EmailEmpresario = "empresario@pedro.com",
+                TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
+                NumeroAlbunsLancados = 0,
+                NumeroComposicoes = 0,
+                CacheMinimo = 100000
+            };
+            General.ArtistasSize++;
+
+            General.Artistas[2] = new General.Artista() {
+                Codigo = 3,
+                NomeVerdadeiro = "Adrian Frederick Smith",
+                NomeArtistico = "Adrian Smith",
+                Aniversario = Convert.ToDateTime("27/02/1957"),
+                BandaBool = true,
+                NomeBanda = "Iron Maiden",
+                Email = "adriano@homemdeferro.com",
+                Telefone = "+5511987654321",
+                NomeEmpresario = "Empresário do adriano",
+                EmailEmpresario = "empresario@adriano.com",
+                TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
+                NumeroAlbunsLancados = 0,
+                NumeroComposicoes = 0,
+                CacheMinimo = 100000
+            };
+            General.ArtistasSize++;
+
+            General.Artistas[3] = new General.Artista() {
+                Codigo = 4,
+                NomeVerdadeiro = "Edward Louis Severson III",
+                NomeArtistico = "Eddie Vedder",
+                Aniversario = Convert.ToDateTime("23/12/1964"),
+                BandaBool = true,
+                NomeBanda = "Pearl Jam",
+                Email = "edvaldo@geleiadeperola.com",
+                Telefone = "+5511987654321",
+                NomeEmpresario = "Empresário do edvaldo",
+                EmailEmpresario = "empresario@edvaldo.com",
+                TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
+                NumeroAlbunsLancados = 0,
+                NumeroComposicoes = 0,
+                CacheMinimo = 100000
+            };
+            General.ArtistasSize++;
+
+            UpdateRows(DataGrid.Artistas);
+
+            
         }
 
         private void dataGridViewMusicas_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -175,7 +255,10 @@ namespace data_structure_project_record_company {
         }
 
         private void Search_Click(object sender, EventArgs e) {
-            new Search().Show();
+            if (IsFormOpen("Search"))
+                MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                new Search().Show();
         }
 
         private bool IsFormOpen(string name) {
@@ -186,5 +269,9 @@ namespace data_structure_project_record_company {
 
             return false;
         }
-	}
+
+        private void GerarRelatorio_Click(object sender, EventArgs e) {
+
+        }
+    }
 }
