@@ -112,5 +112,50 @@ namespace data_structure_project_record_company {
                 Merge(array, left, middle, right);
             }
         }
+
+        public static void Sort(DateTime[] array) {
+            Length = array.Length - 1;
+
+            MainSort(array, 0, Length);
+        }
+
+        private static void Merge(DateTime[] array, int left, int middle, int right) {
+            DateTime[] leftGenArray = new DateTime[middle - left + 1];
+            DateTime[] rightGenArray = new DateTime[right - middle];
+
+            Array.Copy(array, left, leftGenArray, 0, middle - left + 1);
+            Array.Copy(array, middle + 1, rightGenArray, 0, right - middle);
+
+            int i = 0, j = 0;
+            for (int k = left; k < right + 1; k++) {
+                if (i == leftGenArray.Length) {
+                    array[k] = rightGenArray[j];
+                    j++;
+                }
+                else if (j == rightGenArray.Length) {
+                    array[k] = leftGenArray[i];
+                    i++;
+                }
+                else if (leftGenArray[i] <= rightGenArray[j]) {
+                    array[k] = leftGenArray[i];
+                    i++;
+                }
+                else {
+                    array[k] = rightGenArray[j];
+                    j++;
+                }
+            }
+        }
+
+        private static void MainSort(DateTime[] array, int left, int right) {
+            if (left < right) {
+                int middle = (left + right) / 2;
+
+                MainSort(array, left, middle);
+                MainSort(array, middle + 1, right);
+
+                Merge(array, left, middle, right);
+            }
+        }
     }
 }
