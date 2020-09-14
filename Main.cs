@@ -24,6 +24,7 @@ namespace data_structure_project_record_company {
             toolTip.SetToolTip(AlbumAdd, "Adicionar álbum");
             toolTip.SetToolTip(ArtistAdd, "Adicionar artista");
             toolTip.SetToolTip(Search, "Pesquisar");
+            toolTip.SetToolTip(GerarRelatorio, "Gerar Relatório");
 
             // DataGridView Musicas
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn() {
@@ -347,6 +348,50 @@ namespace data_structure_project_record_company {
             #endregion
 
             UpdateRows(DataGrid.Musicas);
+
+            #region Albums
+            General.Albums[0] = new General.Album() {
+                Codigo = 1,
+                Titulo = "World on Fire",
+                CodigosMusicas = new int[5] { 1, 2, 3, 4, 5 },
+                DataLancamento = Convert.ToDateTime("15/07/2014"),
+                NumeroCopiasVendidas = 0,
+                ArtistasParticipantes = new int[1] { 1 }
+            };
+            General.AlbumsSize++;
+
+            General.Albums[1] = new General.Album() {
+                Codigo = 2,
+                Titulo = "OPEN SOURCE",
+                CodigosMusicas = new int[5] { 6, 7, 8, 9, 10 },
+                DataLancamento = Convert.ToDateTime("10/07/2020"),
+                NumeroCopiasVendidas = 0,
+                ArtistasParticipantes = new int[1] { 2 }
+            };
+            General.AlbumsSize++;
+
+            General.Albums[2] = new General.Album() {
+                Codigo = 3,
+                Titulo = "Somewhere in Time",
+                CodigosMusicas = new int[5] { 11, 12, 13, 14, 15 },
+                DataLancamento = Convert.ToDateTime("29/09/1986"),
+                NumeroCopiasVendidas = 0,
+                ArtistasParticipantes = new int[1] { 3 }
+            };
+            General.AlbumsSize++;
+
+            General.Albums[3] = new General.Album() {
+                Codigo = 4,
+                Titulo = "Into the Wild",
+                CodigosMusicas = new int[5] { 16, 17, 18, 19, 20 },
+                DataLancamento = Convert.ToDateTime("18/09/2007"),
+                NumeroCopiasVendidas = 0,
+                ArtistasParticipantes = new int[1] { 4 }
+            };
+            General.AlbumsSize++;
+
+            UpdateRows(DataGrid.Albuns);
+            #endregion
         }
 
         private void dataGridViewMusicas_CellClick(object sender, DataGridViewCellEventArgs e) {
