@@ -6,10 +6,10 @@ using System.Text;
 
 namespace data_structure_project_record_company {
 	class MergeSort {
-        private static int[] Codigos;
         private static Array GenArray;
+        private static int[] Codigos;
+        private static DateTime[] CodigosDt;
 		private static int Length;
-
 
         private static void Merge(int left, int middle, int right) {
             int[] leftArray = new int[middle - left + 1];
@@ -113,48 +113,59 @@ namespace data_structure_project_record_company {
             }
         }
 
-        public static void Sort(DateTime[] array) {
-            Length = array.Length - 1;
+        // DateTime Sort
+        public static void Sort(Array array, DateTime[] keys) {
+            GenArray = array;
+            CodigosDt = keys;
+            Length = CodigosDt.Where(a => a != DateTime.MinValue).Count() - 1;
 
-            MainSort(array, 0, Length);
+            MainSortDt(0, Length);
         }
 
-        private static void Merge(DateTime[] array, int left, int middle, int right) {
-            DateTime[] leftGenArray = new DateTime[middle - left + 1];
-            DateTime[] rightGenArray = new DateTime[right - middle];
-
-            Array.Copy(array, left, leftGenArray, 0, middle - left + 1);
-            Array.Copy(array, middle + 1, rightGenArray, 0, right - middle);
-
-            int i = 0, j = 0;
-            for (int k = left; k < right + 1; k++) {
-                if (i == leftGenArray.Length) {
-                    array[k] = rightGenArray[j];
-                    j++;
-                }
-                else if (j == rightGenArray.Length) {
-                    array[k] = leftGenArray[i];
-                    i++;
-                }
-                else if (leftGenArray[i] <= rightGenArray[j]) {
-                    array[k] = leftGenArray[i];
-                    i++;
-                }
-                else {
-                    array[k] = rightGenArray[j];
-                    j++;
-                }
-            }
-        }
-
-        private static void MainSort(DateTime[] array, int left, int right) {
+        private static void MainSortDt(int left, int right) {
             if (left < right) {
                 int middle = (left + right) / 2;
 
-                MainSort(array, left, middle);
-                MainSort(array, middle + 1, right);
+                MainSortDt(left, middle);
+                MainSortDt(middle + 1, right);
 
-                Merge(array, left, middle, right);
+                MergeDt(left, middle, right);
+            }
+        }
+
+        private static void MergeDt(int left, int middle, int right) {
+            DateTime[] leftArray = new DateTime[middle - left + 1];
+            object[] leftGenArray = new object[middle - left + 1];
+            DateTime[] rightArray = new DateTime[right - middle];
+            object[] rightGenArray = new object[right - middle];
+
+            Array.Copy(CodigosDt, left, leftArray, 0, middle - left + 1);
+            Array.Copy(GenArray, left, leftGenArray, 0, middle - left + 1);
+            Array.Copy(CodigosDt, middle + 1, rightArray, 0, right - middle);
+            Array.Copy(GenArray, middle + 1, rightGenArray, 0, right - middle);
+
+            int i = 0, j = 0;
+            for (int k = left; k < right + 1; k++) {
+                if (i == leftArray.Length) {
+                    CodigosDt[k] = rightArray[j];
+                    GenArray.SetValue(rightGenArray[j], k);
+                    j++;
+                }
+                else if (j == rightArray.Length) {
+                    CodigosDt[k] = leftArray[i];
+                    GenArray.SetValue(leftGenArray[i], k);
+                    i++;
+                }
+                else if (leftArray[i] <= rightArray[j]) {
+                    CodigosDt[k] = leftArray[i];
+                    GenArray.SetValue(leftGenArray[i], k);
+                    i++;
+                }
+                else {
+                    CodigosDt[k] = rightArray[j];
+                    GenArray.SetValue(rightGenArray[j], k);
+                    j++;
+                }
             }
         }
     }

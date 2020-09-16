@@ -22,7 +22,6 @@ namespace data_structure_project_record_company {
             public int[] ArtistasParticipantes { get; set; }
 
             public static void RemoveAt(int index) {
-                Album temp = Albums[index];
                 Albums = Albums.Where((a, idx) => idx != index).ToArray();
                 Array.Resize(ref Albums, MaxSize);
             }
@@ -51,7 +50,6 @@ namespace data_structure_project_record_company {
             public decimal CacheMinimo { get; set; }
 
             public static void RemoveAt(int index) {
-                Artista temp = Artistas[index];
                 Artistas = Artistas.Where((a, idx) => idx != index).ToArray();
                 Array.Resize(ref Artistas, MaxSize);
             }

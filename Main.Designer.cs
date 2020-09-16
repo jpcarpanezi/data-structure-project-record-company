@@ -50,10 +50,14 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.Search = new System.Windows.Forms.Button();
             this.GerarRelatorio = new System.Windows.Forms.Button();
+            this.MenuRelatorio = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.RelatorioAniversariantes = new System.Windows.Forms.ToolStripMenuItem();
+            this.RelatorioAlbuns = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlbuns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMusicas)).BeginInit();
+            this.MenuRelatorio.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -274,10 +278,31 @@
             this.GerarRelatorio.UseVisualStyleBackColor = true;
             this.GerarRelatorio.Click += new System.EventHandler(this.GerarRelatorio_Click);
             // 
+            // MenuRelatorio
+            // 
+            this.MenuRelatorio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RelatorioAniversariantes,
+            this.RelatorioAlbuns});
+            this.MenuRelatorio.Name = "contextMenuStrip1";
+            this.MenuRelatorio.Size = new System.Drawing.Size(272, 48);
+            // 
+            // RelatorioAniversariantes
+            // 
+            this.RelatorioAniversariantes.Name = "RelatorioAniversariantes";
+            this.RelatorioAniversariantes.Size = new System.Drawing.Size(271, 22);
+            this.RelatorioAniversariantes.Text = "Relatório de Aniversariantes";
+            // 
+            // RelatorioAlbuns
+            // 
+            this.RelatorioAlbuns.Name = "RelatorioAlbuns";
+            this.RelatorioAlbuns.Size = new System.Drawing.Size(271, 22);
+            this.RelatorioAlbuns.Text = "Relatório de Álbuns a serem lançados";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 961);
             this.Controls.Add(this.GerarRelatorio);
             this.Controls.Add(this.Search);
@@ -294,6 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlbuns)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMusicas)).EndInit();
+            this.MenuRelatorio.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +351,8 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.Button GerarRelatorio;
+        private System.Windows.Forms.ContextMenuStrip MenuRelatorio;
+        private System.Windows.Forms.ToolStripMenuItem RelatorioAniversariantes;
+        private System.Windows.Forms.ToolStripMenuItem RelatorioAlbuns;
     }
 }

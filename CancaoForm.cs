@@ -22,6 +22,7 @@ namespace data_structure_project_record_company {
         public CancaoForm(int index) {
             InitializeComponent();
             Codigo.Enabled = false;
+            Text = "Editar Música";
 
             Index = index;
         }

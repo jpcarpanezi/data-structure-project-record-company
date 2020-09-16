@@ -24,6 +24,8 @@ namespace data_structure_project_record_company {
             Index = index;
             Banda.Enabled = false;
 
+            Text = "Editar Artista";
+
             Codigo.Enabled = false;
             General.Artista artistaTemp = General.Artistas[index];
             Codigo.Text = artistaTemp.Codigo.ToString();

@@ -492,12 +492,7 @@ namespace data_structure_project_record_company {
                     dataGridViewArtistas.Rows.Clear();
                     for (int i = 0; i < General.ArtistasSize; i++) {
                         General.Artista artistaTemp = General.Artistas[i];
-                        string banda;
-                        if (artistaTemp.BandaBool)
-                            banda = "Sim";
-                        else
-                            banda = "Não";
-                        dataGridViewArtistas.Rows.Add(artistaTemp.Codigo, artistaTemp.NomeVerdadeiro, artistaTemp.NomeArtistico, artistaTemp.Aniversario.ToString("d"), banda, "Editar", "Remover");
+                        dataGridViewArtistas.Rows.Add(artistaTemp.Codigo, artistaTemp.NomeVerdadeiro, artistaTemp.NomeArtistico, artistaTemp.Aniversario.ToString("d"), artistaTemp.BandaBool ? "Sim" : "Não", "Editar", "Remover");
                     }
                     break;
             }
@@ -513,7 +508,7 @@ namespace data_structure_project_record_company {
             if (IsFormOpen("Search"))
                 MessageBox.Show("Não é possível abrir outro formulário do mesmo tipo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                new Search().Show();
+                new Pesquisar().Show();
         }
 
         private bool IsFormOpen(string name) {
@@ -526,7 +521,21 @@ namespace data_structure_project_record_company {
         }
 
         private void GerarRelatorio_Click(object sender, EventArgs e) {
+            // Previne que as funções disparem mais de uma vez
+            MenuRelatorio.Items[0].Click -= RelatorioAniversariantes_Click;
+            MenuRelatorio.Items[1].Click -= RelatorioAlbuns_Click;
 
+            MenuRelatorio.Items[0].Click += RelatorioAniversariantes_Click;
+            MenuRelatorio.Items[1].Click += RelatorioAlbuns_Click;
+            MenuRelatorio.Show(Cursor.Position);
+        }
+
+        private void RelatorioAniversariantes_Click(object sender, EventArgs e) {
+            new Relatorios(Relatorios.TipoRelatorio.Aniversario).Show();
+        }
+
+        private void RelatorioAlbuns_Click(object sender, EventArgs e) {
+            new Relatorios(Relatorios.TipoRelatorio.Album).Show();
         }
     }
 }

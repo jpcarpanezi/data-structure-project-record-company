@@ -21,6 +21,7 @@ namespace data_structure_project_record_company {
         public AlbumForm(int index) {
             InitializeComponent();
             Codigo.Enabled = false;
+            Text = "Editar Álbum";
             Index = index;
         }
 
