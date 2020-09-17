@@ -72,12 +72,20 @@ namespace data_structure_project_record_company {
                 DataGridView1.Columns.Add("Codigo", "Código");
                 DataGridView1.Columns.Add("Titulo", "Título");
                 DataGridView1.Rows.Clear();
+
+                General.Cancao[] cancoes = new General.Cancao[0];
                 for (int i = 0; i < General.CancoesSize; i++) {
                     if (General.Cancoes[i].CodigoCompositor == codigo && General.Cancoes[i].CodigoArtistaPrimeiraGravacao == codigo) {
-                        General.Cancao cancaoTemp = General.Cancoes[i];
-                        DataGridView1.Rows.Add(cancaoTemp.Codigo, cancaoTemp.Titulo);
+                        Array.Resize(ref cancoes, cancoes.Length + 1);
+                        cancoes[^1] = General.Cancoes[i];
                     }
                 }
+
+                MergeSort.Sort(cancoes, Array.ConvertAll(cancoes, a => a.Titulo));
+                for (int i = 0; i < cancoes.Length; i++) {
+                    DataGridView1.Rows.Add(cancoes[i].Codigo, cancoes[i].Titulo);
+                }
+                
 
                 DataGridView2.Columns.Clear();
                 DataGridView2.Columns.Add("Codigo", "Código");
@@ -86,13 +94,18 @@ namespace data_structure_project_record_company {
                 DataGridView2.Columns.Add("CopiasVendidas", "Número de Cópias Vendidas");
 
                 DataGridView2.Rows.Clear();
+                General.Album[] albums = new General.Album[0];
                 for (int i = 0; i < General.AlbumsSize; i++) {
                     for (int j = 0; j < General.Albums[i].ArtistasParticipantes.Length; j++) {
                         if (General.Albums[i].ArtistasParticipantes[j] == codigo) {
-                            General.Album albumTemp = General.Albums[i];
-                            DataGridView2.Rows.Add(albumTemp.Codigo, albumTemp.Titulo, albumTemp.DataLancamento.ToString("d"), albumTemp.NumeroCopiasVendidas.ToString());
+                            Array.Resize(ref albums, albums.Length + 1);
+                            albums[^1] = General.Albums[i];
                         }
                     }
+                }
+                MergeSort.Sort(albums, Array.ConvertAll(albums, a => a.Titulo));
+                for (int i = 0; i < albums.Length; i++) {
+                    DataGridView2.Rows.Add(albums[i].Codigo, albums[i].Titulo, albums[i].DataLancamento.ToString("d"), albums[i].NumeroCopiasVendidas);
                 }
 
                 RemoverSort();
