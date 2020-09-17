@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.Codigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Titulo = new System.Windows.Forms.TextBox();
@@ -40,6 +41,8 @@
             this.PesquisarArtistas = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Remover = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Codigo
@@ -97,7 +100,7 @@
             // 
             // Salvar
             // 
-            this.Salvar.Location = new System.Drawing.Point(384, 415);
+            this.Salvar.Location = new System.Drawing.Point(331, 415);
             this.Salvar.Name = "Salvar";
             this.Salvar.Size = new System.Drawing.Size(75, 23);
             this.Salvar.TabIndex = 7;
@@ -156,6 +159,7 @@
             this.PesquisaMusicas.Name = "PesquisaMusicas";
             this.PesquisaMusicas.Size = new System.Drawing.Size(100, 23);
             this.PesquisaMusicas.TabIndex = 13;
+            this.PesquisaMusicas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisaMusicas_KeyDown);
             // 
             // PesquisarArtistas
             // 
@@ -163,6 +167,7 @@
             this.PesquisarArtistas.Name = "PesquisarArtistas";
             this.PesquisarArtistas.Size = new System.Drawing.Size(100, 23);
             this.PesquisarArtistas.TabIndex = 14;
+            this.PesquisarArtistas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarArtistas_KeyDown);
             // 
             // label7
             // 
@@ -182,11 +187,22 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Pesquisar Código";
             // 
+            // Remover
+            // 
+            this.Remover.Location = new System.Drawing.Point(412, 415);
+            this.Remover.Name = "Remover";
+            this.Remover.Size = new System.Drawing.Size(75, 23);
+            this.Remover.TabIndex = 16;
+            this.Remover.Text = "Remover";
+            this.Remover.UseVisualStyleBackColor = true;
+            this.Remover.Click += new System.EventHandler(this.Remover_Click);
+            // 
             // AlbumForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Remover);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.PesquisarArtistas);
@@ -231,5 +247,7 @@
         private System.Windows.Forms.TextBox PesquisarArtistas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button Remover;
     }
 }

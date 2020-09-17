@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace data_structure_project_record_company {
-	class BinarySearch {
+    class BinarySearch {
         public static int BinarySearchDisplay(int[] arr, int key) {
             int min = 0;
             int max = arr.Length - 1;
@@ -25,6 +25,7 @@ namespace data_structure_project_record_company {
             return -1;
         }
 
+        // Esta função é utilizada apenas em funções de interface do sistema, as informações de Canção, Artista e Álbum estão todas em vetores de tamanho fixo
         public static int BinarySearchDisplay(List<int> arr, int key) {
             int min = 0;
             int max = arr.Count - 1;

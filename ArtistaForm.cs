@@ -15,6 +15,9 @@ namespace data_structure_project_record_company {
 
         public ArtistaForm() {
             InitializeComponent();
+            Remover.Visible = false;
+            Salvar.Location = new Point(371, 351);
+
             Index = -1;
             Banda.Enabled = false;
         }
@@ -55,36 +58,31 @@ namespace data_structure_project_record_company {
             }
         }
 
-        private bool ValidateMail(String email){
-            if(Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z")){
-                return true;
-			}else{
-                return false;
-			}
-		}
+        private bool ValidateMail(String email) {
+            return Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z");
+        }
 
         private void Salvar_Click(object sender, EventArgs e) {
             string erro = "";
-            if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "") 
-                erro += "- O código precisa ser um número\n";
 
-            if (codigo <= 0 && Codigo.Text != "")
-                erro += "- O código precisa ser maior que zero\n";
+            int codigo = 0;
+            if (Codigo.Text != "" && (!int.TryParse(Codigo.Text, out codigo) || codigo <= 0))
+                erro += "- O código precisa ser um número maior que zero\n";
 
-            if (NomeVerdadeiro.Text == "" || NomeArtistico.Text == "" || DataAniversario.Text == "" || (BandaSN.Checked && Banda.Text == "") || Email.Text == "" || Telefone.Text == "" || NomeEmpresario.Text == "" || EmailEmpresario.Text == "" || TipoTrabalho.SelectedIndex == -1 || NAlbunsLancados.Text == "" || NComposicoes.Text == "") 
+            if (NomeVerdadeiro.Text == "" || NomeArtistico.Text == "" || DataAniversario.Text == "" || (BandaSN.Checked && Banda.Text == "") || Email.Text == "" || Telefone.Text == "" || NomeEmpresario.Text == "" || EmailEmpresario.Text == "" || TipoTrabalho.SelectedIndex == -1 || NAlbunsLancados.Text == "" || NComposicoes.Text == "")
                 erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
 
-            if (!DateTime.TryParse(DataAniversario.Text, out DateTime aniversario)) 
+            if (!DateTime.TryParse(DataAniversario.Text, out DateTime aniversario))
                 erro += "- O campo Data de Aniversário não está em um formato válido, utilize o formato dia/mês/ano\n";
 
-            if (!int.TryParse(NAlbunsLancados.Text, out int nAlbunsLancados)) 
+            if (!int.TryParse(NAlbunsLancados.Text, out int nAlbunsLancados))
                 erro += "- O número de álbuns lançados precisa ser um número\n";
-            
-            if (!int.TryParse(NComposicoes.Text, out int nComposicoes)) 
+
+            if (!int.TryParse(NComposicoes.Text, out int nComposicoes))
                 erro += "- O número de composições precisa ser um número\n";
 
-            if (!decimal.TryParse(CacheMinimo.Text, out decimal cacheMinimo)) 
-                erro += "- O campo Cache Mínimo não está em um formato válido, utilize o formato #.##\n";
+            if (!decimal.TryParse(CacheMinimo.Text, out decimal cacheMinimo))
+                erro += "- O campo cache mínimo precisa ser um número\n";
 
             if (Index == -1 && BinarySearch.BinarySearchDisplay(Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray(), codigo) != -1)
                 erro += "- Este código já está sendo utilizado\n";
@@ -105,14 +103,11 @@ namespace data_structure_project_record_company {
                 0 => General.Artista.TipoTrabalho.Cantor,
                 1 => General.Artista.TipoTrabalho.Compositor,
                 2 => General.Artista.TipoTrabalho.Ambos,
-                _ => throw new IndexOutOfRangeException(),
+                _ => throw new ArgumentOutOfRangeException(),
             };
 
             if (Codigo.Text == "") {
-                if (General.ArtistasSize == 0)
-                    codigo = 1;
-                else
-                    codigo = General.Artistas[General.ArtistasSize - 1].Codigo + 1;
+                codigo = General.ArtistasSize != 0 ? General.Artistas[General.ArtistasSize - 1].Codigo + 1 : 1;
             }
 
             if (Index == -1) {
@@ -129,10 +124,12 @@ namespace data_structure_project_record_company {
                     EmailEmpresario = EmailEmpresario.Text,
                     TipoDeTrabalho = tipoTrabalho,
                     NumeroAlbunsLancados = nAlbunsLancados,
-                    NumeroComposicoes = nComposicoes, 
+                    NumeroComposicoes = nComposicoes,
                     CacheMinimo = cacheMinimo
                 };
 
+                // A função Array.ConvertAll pega o vetor da struct Album e retorna um vetor de inteiros com os códigos de cada uma
+                // A função Where remove todos os índices de código 0 pois nestes casos o vetor não está preenchido e não deve ser ordenado
                 MergeSort.Sort(General.Artistas, Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray());
             }
             else {
@@ -156,6 +153,20 @@ namespace data_structure_project_record_company {
 
             Program.globalForm.UpdateRows(Main.DataGrid.Artistas);
             Close();
+        }
+
+        private void Remover_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("Tem certeza que deseja remover este artista? Todos as músicas e álbuns que contém este artista também serão excluídos.", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                General.Cancao.RemoverArtista(General.Artistas[Index].Codigo);
+                General.Album.RemoverArtista(General.Artistas[Index].Codigo);
+                General.Artista.RemoveAt(Index);
+
+                Program.globalForm.UpdateRows(Main.DataGrid.Albuns);
+                Program.globalForm.UpdateRows(Main.DataGrid.Musicas);
+                Program.globalForm.UpdateRows(Main.DataGrid.Artistas);
+
+                Close();
+            }
         }
     }
 }

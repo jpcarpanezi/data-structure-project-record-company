@@ -51,10 +51,11 @@ namespace data_structure_project_record_company {
             MesDesejado.Visible = false;
             PesquisarMes.Visible = false;
 
-            dataGridView1.ColumnCount = 3;
-            dataGridView1.Columns[0].Name = "Código";
-            dataGridView1.Columns[1].Name = "Título";
-            dataGridView1.Columns[2].Name = "Data de Lançamento";
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("Codigo", "Código");
+            dataGridView1.Columns.Add("Titulo", "Título");
+            dataGridView1.Columns.Add("DataLancamento", "Data de Lançamento");
+            RemoverSort();
 
             List<General.Album> albums = new List<General.Album>();
             for (int i = 0; i < General.AlbumsSize; i++) {
@@ -94,20 +95,29 @@ namespace data_structure_project_record_company {
                 LabelGridView.Visible = true;
                 LabelGridView.Text = "Aniversariantes no mês " + MesDesejado.Text;
 
-                dataGridView1.ColumnCount = 4;
-                dataGridView1.Columns[0].Name = "Código";
-                dataGridView1.Columns[1].Name = "Data de Aniversário";
-                dataGridView1.Columns[2].Name = "Cache Mínimo";
-                dataGridView1.Columns[3].Name = "Cache Mínimo + 20%";
+                dataGridView1.Columns.Clear(); ;
+                dataGridView1.Columns.Add("Codigo", "Código");
+                dataGridView1.Columns.Add("DataAniversario", "Data de Aniversário");
+                dataGridView1.Columns.Add("CacheMinimo", "Cache Mínimo");
+                dataGridView1.Columns.Add("CacheMinimo1.2", "Cache Mínimo + 20%");
+                RemoverSort();
 
                 for (int i = 0; i < artistas.Count; i++) {
                     dataGridView1.Rows.Add(artistas[i].Codigo, artistas[i].Aniversario.ToString("d"), artistas[i].CacheMinimo.ToString("C"), (artistas[i].CacheMinimo * 1.2m).ToString("C"));
                 }
             }
             else {
+                dataGridView1.Rows.Clear();
+                LabelGridView.Text = "";
                 MessageBox.Show("Não existem aniversariantes para este mês.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        private void RemoverSort() {
+            foreach (DataGridViewColumn column in dataGridView1.Columns) {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
     }
+
 }

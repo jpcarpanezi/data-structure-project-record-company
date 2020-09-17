@@ -5,11 +5,11 @@ using System.Net.NetworkInformation;
 using System.Text;
 
 namespace data_structure_project_record_company {
-	class MergeSort {
+    class MergeSort {
         private static Array GenArray;
         private static int[] Codigos;
         private static DateTime[] CodigosDt;
-		private static int Length;
+        private static int Length;
 
         private static void Merge(int left, int middle, int right) {
             int[] leftArray = new int[middle - left + 1];

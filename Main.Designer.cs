@@ -30,21 +30,21 @@
             this.ArtistAdd = new System.Windows.Forms.Button();
             this.SongAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridViewArtistas = new System.Windows.Forms.DataGridView();
+            this.DataGridViewArtistas = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeVerdadeiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeArtistico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aniversario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BandaBool = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewAlbuns = new System.Windows.Forms.DataGridView();
+            this.DataGridViewAlbuns = new System.Windows.Forms.DataGridView();
             this.CodigoAlbum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TituloAlbum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataLancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroCopias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.Musicas = new System.Windows.Forms.Label();
-            this.dataGridViewMusicas = new System.Windows.Forms.DataGridView();
+            this.DataGridViewMusicas = new System.Windows.Forms.DataGridView();
             this.SongCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SongTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -54,9 +54,9 @@
             this.RelatorioAniversariantes = new System.Windows.Forms.ToolStripMenuItem();
             this.RelatorioAlbuns = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlbuns)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMusicas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewArtistas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewAlbuns)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMusicas)).BeginInit();
             this.MenuRelatorio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,60 +106,69 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.dataGridViewArtistas);
+            this.panel1.Controls.Add(this.DataGridViewArtistas);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dataGridViewAlbuns);
+            this.panel1.Controls.Add(this.DataGridViewAlbuns);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.Musicas);
-            this.panel1.Controls.Add(this.dataGridViewMusicas);
+            this.panel1.Controls.Add(this.DataGridViewMusicas);
             this.panel1.Location = new System.Drawing.Point(12, 86);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(789, 890);
+            this.panel1.Size = new System.Drawing.Size(766, 892);
             this.panel1.TabIndex = 2;
             // 
-            // dataGridViewArtistas
+            // DataGridViewArtistas
             // 
-            this.dataGridViewArtistas.AllowUserToAddRows = false;
-            this.dataGridViewArtistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewArtistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewArtistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewArtistas.AllowUserToAddRows = false;
+            this.DataGridViewArtistas.AllowUserToDeleteRows = false;
+            this.DataGridViewArtistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewArtistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewArtistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.NomeVerdadeiro,
             this.NomeArtistico,
             this.Aniversario,
             this.BandaBool});
-            this.dataGridViewArtistas.Location = new System.Drawing.Point(0, 636);
-            this.dataGridViewArtistas.Name = "dataGridViewArtistas";
-            this.dataGridViewArtistas.Size = new System.Drawing.Size(760, 251);
-            this.dataGridViewArtistas.TabIndex = 0;
-            this.dataGridViewArtistas.Text = "dataGridView3";
+            this.DataGridViewArtistas.Location = new System.Drawing.Point(0, 636);
+            this.DataGridViewArtistas.Name = "DataGridViewArtistas";
+            this.DataGridViewArtistas.ReadOnly = true;
+            this.DataGridViewArtistas.Size = new System.Drawing.Size(762, 251);
+            this.DataGridViewArtistas.TabIndex = 0;
+            this.DataGridViewArtistas.Text = "dataGridView3";
             // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             // 
             // NomeVerdadeiro
             // 
             this.NomeVerdadeiro.HeaderText = "Nome Verdadeiro";
             this.NomeVerdadeiro.Name = "NomeVerdadeiro";
+            this.NomeVerdadeiro.ReadOnly = true;
             // 
             // NomeArtistico
             // 
             this.NomeArtistico.HeaderText = "Nome Artístico";
             this.NomeArtistico.Name = "NomeArtistico";
+            this.NomeArtistico.ReadOnly = true;
             // 
             // Aniversario
             // 
             this.Aniversario.HeaderText = "Data de Aniversário";
             this.Aniversario.Name = "Aniversario";
+            this.Aniversario.ReadOnly = true;
             // 
             // BandaBool
             // 
             this.BandaBool.HeaderText = "Faz parte de uma banda?";
             this.BandaBool.Name = "BandaBool";
+            this.BandaBool.ReadOnly = true;
             // 
             // label2
             // 
@@ -172,42 +181,48 @@
             this.label2.Text = "Artistas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dataGridViewAlbuns
+            // DataGridViewAlbuns
             // 
-            this.dataGridViewAlbuns.AllowUserToAddRows = false;
-            this.dataGridViewAlbuns.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewAlbuns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAlbuns.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewAlbuns.AllowUserToAddRows = false;
+            this.DataGridViewAlbuns.AllowUserToDeleteRows = false;
+            this.DataGridViewAlbuns.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewAlbuns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewAlbuns.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoAlbum,
             this.TituloAlbum,
             this.DataLancamento,
             this.NumeroCopias});
-            this.dataGridViewAlbuns.Location = new System.Drawing.Point(1, 330);
-            this.dataGridViewAlbuns.Name = "dataGridViewAlbuns";
-            this.dataGridViewAlbuns.Size = new System.Drawing.Size(760, 251);
-            this.dataGridViewAlbuns.TabIndex = 0;
-            this.dataGridViewAlbuns.Text = "dataGridView2";
+            this.DataGridViewAlbuns.Location = new System.Drawing.Point(1, 330);
+            this.DataGridViewAlbuns.Name = "DataGridViewAlbuns";
+            this.DataGridViewAlbuns.ReadOnly = true;
+            this.DataGridViewAlbuns.Size = new System.Drawing.Size(762, 251);
+            this.DataGridViewAlbuns.TabIndex = 0;
+            this.DataGridViewAlbuns.Text = "dataGridView2";
             // 
             // CodigoAlbum
             // 
             this.CodigoAlbum.HeaderText = "Código";
             this.CodigoAlbum.Name = "CodigoAlbum";
+            this.CodigoAlbum.ReadOnly = true;
             // 
             // TituloAlbum
             // 
             this.TituloAlbum.HeaderText = "Título";
             this.TituloAlbum.Name = "TituloAlbum";
+            this.TituloAlbum.ReadOnly = true;
             this.TituloAlbum.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // DataLancamento
             // 
             this.DataLancamento.HeaderText = "Data de Lançamento";
             this.DataLancamento.Name = "DataLancamento";
+            this.DataLancamento.ReadOnly = true;
             // 
             // NumeroCopias
             // 
             this.NumeroCopias.HeaderText = "Número de Cópias Vendidas";
             this.NumeroCopias.Name = "NumeroCopias";
+            this.NumeroCopias.ReadOnly = true;
             // 
             // label1
             // 
@@ -230,30 +245,35 @@
             this.Musicas.TabIndex = 1;
             this.Musicas.Text = "Músicas";
             // 
-            // dataGridViewMusicas
+            // DataGridViewMusicas
             // 
-            this.dataGridViewMusicas.AllowUserToAddRows = false;
-            this.dataGridViewMusicas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewMusicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMusicas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridViewMusicas.AllowUserToAddRows = false;
+            this.DataGridViewMusicas.AllowUserToDeleteRows = false;
+            this.DataGridViewMusicas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewMusicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewMusicas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SongCodigo,
             this.SongTitulo});
-            this.dataGridViewMusicas.Location = new System.Drawing.Point(0, 31);
-            this.dataGridViewMusicas.Name = "dataGridViewMusicas";
-            this.dataGridViewMusicas.Size = new System.Drawing.Size(760, 251);
-            this.dataGridViewMusicas.TabIndex = 0;
-            this.dataGridViewMusicas.Text = "dataGridView1";
+            this.DataGridViewMusicas.Location = new System.Drawing.Point(0, 28);
+            this.DataGridViewMusicas.MinimumSize = new System.Drawing.Size(10, 10);
+            this.DataGridViewMusicas.Name = "DataGridViewMusicas";
+            this.DataGridViewMusicas.ReadOnly = true;
+            this.DataGridViewMusicas.Size = new System.Drawing.Size(760, 251);
+            this.DataGridViewMusicas.TabIndex = 0;
+            this.DataGridViewMusicas.Text = "dataGridView1";
             // 
             // SongCodigo
             // 
             this.SongCodigo.HeaderText = "Código";
             this.SongCodigo.Name = "SongCodigo";
+            this.SongCodigo.ReadOnly = true;
             this.SongCodigo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // SongTitulo
             // 
             this.SongTitulo.HeaderText = "Título";
             this.SongTitulo.Name = "SongTitulo";
+            this.SongTitulo.ReadOnly = true;
             this.SongTitulo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Search
@@ -310,15 +330,15 @@
             this.Controls.Add(this.SongAdd);
             this.Controls.Add(this.ArtistAdd);
             this.Controls.Add(this.AlbumAdd);
+            this.MinimumSize = new System.Drawing.Size(816, 400);
             this.Name = "Main";
             this.Text = "Recorder";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArtistas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlbuns)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMusicas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewArtistas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewAlbuns)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMusicas)).EndInit();
             this.MenuRelatorio.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,10 +351,10 @@
         private System.Windows.Forms.Button ArtistAdd;
         private System.Windows.Forms.Button SongAdd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridViewMusicas;
-        private System.Windows.Forms.DataGridView dataGridViewArtistas;
+        private System.Windows.Forms.DataGridView DataGridViewMusicas;
+        private System.Windows.Forms.DataGridView DataGridViewArtistas;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridViewAlbuns;
+        private System.Windows.Forms.DataGridView DataGridViewAlbuns;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Musicas;
         private System.Windows.Forms.DataGridViewTextBoxColumn SongCodigo;

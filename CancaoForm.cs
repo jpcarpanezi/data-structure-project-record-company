@@ -11,10 +11,12 @@ using System.Windows.Forms;
 namespace data_structure_project_record_company {
     public partial class CancaoForm : Form {
         private int Index { get; set; }
-        private List<int> RefCodes = new List<int>();
+        private readonly List<int> RefCodes = new List<int>();
 
         public CancaoForm() {
             InitializeComponent();
+            Remover.Visible = false;
+            Salvar.Location = new Point(371, 415);
 
             Index = -1;
         }
@@ -40,9 +42,10 @@ namespace data_structure_project_record_company {
             }
 
             for (int i = 0; i < General.ArtistasSize; i++) {
-                RefCodes.Add(General.Artistas[i].Codigo);
-                Compositor.Items.Add(General.Artistas[i].NomeArtistico);
-                Artista.Items.Add(General.Artistas[i].NomeArtistico);
+                General.Artista artistaTemp = General.Artistas[i];
+                RefCodes.Add(artistaTemp.Codigo);
+                Compositor.Items.Add("(" + artistaTemp.Codigo + ") " + artistaTemp.NomeArtistico);
+                Artista.Items.Add("(" + artistaTemp.Codigo + ") " + artistaTemp.NomeArtistico);
             }
 
             if (Index != -1) {
@@ -59,14 +62,15 @@ namespace data_structure_project_record_company {
         private void Salvar_Click(object sender, EventArgs e) {
             string erro = "";
 
-            if (!int.TryParse(Codigo.Text, out int codigo) && Codigo.Text != "")
-                erro += "- O código precisa ser um número\n";
-
-            if(codigo <= 0 && Codigo.Text != "")
-                erro += "- O código precisa ser maior que zero\n";
+            int codigo = 0;
+            if (Codigo.Text != "" && (!int.TryParse(Codigo.Text, out codigo) || codigo <= 0))
+                erro += "- O código precisa ser um número maior que zero\n";
 
             if (Titulo.Text == "" || Letra.Text == "" || Melodia.Text == "" || Compositor.SelectedIndex == -1 || Artista.SelectedIndex == -1)
                 erro += "- Todos os campos precisam ser prenchidos com excessão do código\n";
+
+            if (Index == -1 && BinarySearch.BinarySearchDisplay(Array.ConvertAll(General.Cancoes, a => a.Codigo).Where(a => a > 0).ToArray(), codigo) != -1)
+                erro += "- Este código já está sendo utilizado\n";
 
             if (erro != "") {
                 MessageBox.Show(erro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -74,10 +78,7 @@ namespace data_structure_project_record_company {
             }
 
             if (Codigo.Text == "") {
-                if (General.CancoesSize == 0)
-                    codigo = 1;
-                else
-                    codigo = General.Cancoes[General.CancoesSize - 1].Codigo + 1;
+                codigo = General.CancoesSize != 0 ? General.Cancoes[General.CancoesSize - 1].Codigo + 1 : 1;
             }
 
             if (Index == -1) {
@@ -90,6 +91,8 @@ namespace data_structure_project_record_company {
                     CodigoArtistaPrimeiraGravacao = RefCodes[Artista.SelectedIndex]
                 };
 
+                // A função Array.ConvertAll pega o vetor da struct Album e retorna um vetor de inteiros com os códigos de cada uma
+                // A função Where remove todos os índices de código 0 pois nestes casos o vetor não está preenchido e não deve ser ordenado
                 MergeSort.Sort(General.Cancoes, Array.ConvertAll(General.Cancoes, a => a.Codigo).Where(a => a > 0).ToArray());
             }
             else {
@@ -105,6 +108,18 @@ namespace data_structure_project_record_company {
 
             Program.globalForm.UpdateRows(Main.DataGrid.Musicas);
             Close();
+        }
+
+        private void Remover_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("Tem certeza que deseja remover esta música? Todos os álbuns que contém esta música também serão excluídos.", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                General.Album.RemoverMusica(General.Cancoes[Index].Codigo);
+                General.Cancao.RemoveAt(Index);
+
+                Program.globalForm.UpdateRows(Main.DataGrid.Albuns);
+                Program.globalForm.UpdateRows(Main.DataGrid.Musicas);
+
+                Close();
+            }
         }
     }
 

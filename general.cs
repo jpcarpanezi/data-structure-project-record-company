@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace data_structure_project_record_company {
-	class General {
+    class General {
         public static Album[] Albums;
         public static int AlbumsSize;
         public static Artista[] Artistas;
@@ -22,8 +22,30 @@ namespace data_structure_project_record_company {
             public int[] ArtistasParticipantes { get; set; }
 
             public static void RemoveAt(int index) {
-                Albums = Albums.Where((a, idx) => idx != index).ToArray();
-                Array.Resize(ref Albums, MaxSize);
+                int i = index;
+                for (; i < AlbumsSize - 1; i++) {
+                    Albums[i] = Albums[i + 1];
+                }
+                Albums[i] = new Album();
+                AlbumsSize--;
+            }
+
+            public static void RemoverMusica(int codigo) {
+                for (int i = 0; i < AlbumsSize; i++) {
+                    if (Albums[i].CodigosMusicas.Contains(codigo)) {
+                        RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+
+            public static void RemoverArtista(int codigo) {
+                for (int i = 0; i < AlbumsSize; i++) {
+                    if (Albums[i].ArtistasParticipantes.Contains(codigo)) {
+                        RemoveAt(i);
+                        i--;
+                    }
+                }
             }
         }
 
@@ -51,6 +73,7 @@ namespace data_structure_project_record_company {
 
             public static void RemoveAt(int index) {
                 Artistas = Artistas.Where((a, idx) => idx != index).ToArray();
+                ArtistasSize--;
                 Array.Resize(ref Artistas, MaxSize);
             }
         }
@@ -65,9 +88,18 @@ namespace data_structure_project_record_company {
 
             public static void RemoveAt(int index) {
                 Cancoes = Cancoes.Where((a, idx) => idx != index).ToArray();
+                CancoesSize--;
                 Array.Resize(ref Cancoes, MaxSize);
             }
-        }
 
+            public static void RemoverArtista(int codigo) {
+                for (int i = 0; i < CancoesSize; i++) {
+                    if (Cancoes[i].CodigoCompositor == codigo || Cancoes[i].CodigoArtistaPrimeiraGravacao == codigo) {
+                        RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+        }
     }
 }

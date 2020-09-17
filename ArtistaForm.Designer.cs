@@ -52,6 +52,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.Salvar = new System.Windows.Forms.Button();
+            this.Remover = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Codigo
@@ -294,7 +295,7 @@
             // 
             // Salvar
             // 
-            this.Salvar.Location = new System.Drawing.Point(371, 351);
+            this.Salvar.Location = new System.Drawing.Point(331, 351);
             this.Salvar.Name = "Salvar";
             this.Salvar.Size = new System.Drawing.Size(75, 23);
             this.Salvar.TabIndex = 27;
@@ -302,11 +303,22 @@
             this.Salvar.UseVisualStyleBackColor = true;
             this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
             // 
+            // Remover
+            // 
+            this.Remover.Location = new System.Drawing.Point(413, 351);
+            this.Remover.Name = "Remover";
+            this.Remover.Size = new System.Drawing.Size(75, 23);
+            this.Remover.TabIndex = 28;
+            this.Remover.Text = "Remover";
+            this.Remover.UseVisualStyleBackColor = true;
+            this.Remover.Click += new System.EventHandler(this.Remover_Click);
+            // 
             // ArtistaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 390);
+            this.Controls.Add(this.Remover);
             this.Controls.Add(this.Salvar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -373,5 +385,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button Salvar;
+        private System.Windows.Forms.Button Remover;
     }
 }
