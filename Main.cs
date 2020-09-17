@@ -558,9 +558,11 @@ namespace data_structure_project_record_company {
             // Previne que as funções disparem mais de uma vez, funciona mesmo que a função não tenho sido atribuída ainda
             MenuRelatorio.Items[0].Click -= RelatorioAniversariantes_Click;
             MenuRelatorio.Items[1].Click -= RelatorioAlbuns_Click;
+            MenuRelatorio.Items[2].Click -= RelatorioEmails_Click;
 
             MenuRelatorio.Items[0].Click += RelatorioAniversariantes_Click;
             MenuRelatorio.Items[1].Click += RelatorioAlbuns_Click;
+            MenuRelatorio.Items[2].Click += RelatorioEmails_Click;
             MenuRelatorio.Show(Cursor.Position);
         }
 
@@ -570,6 +572,10 @@ namespace data_structure_project_record_company {
 
         private void RelatorioAlbuns_Click(object sender, EventArgs e) {
             new Relatorios(Relatorios.TipoRelatorio.Album).Show();
+        }
+
+        private void RelatorioEmails_Click(object sender, EventArgs e) {
+            new Relatorios(Relatorios.TipoRelatorio.Emails).Show();
         }
     }
 }

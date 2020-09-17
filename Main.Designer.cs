@@ -53,6 +53,7 @@
             this.MenuRelatorio = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RelatorioAniversariantes = new System.Windows.Forms.ToolStripMenuItem();
             this.RelatorioAlbuns = new System.Windows.Forms.ToolStripMenuItem();
+            this.RelatorioEmails = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewArtistas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewAlbuns)).BeginInit();
@@ -65,15 +66,15 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "music.png");
-            this.imageList1.Images.SetKeyName(1, "record-vinyl.png");
-            this.imageList1.Images.SetKeyName(2, "search.png");
-            this.imageList1.Images.SetKeyName(3, "user-plus.png");
-            this.imageList1.Images.SetKeyName(4, "file.png");
+            this.imageList1.Images.SetKeyName(0, "file.png");
+            this.imageList1.Images.SetKeyName(1, "music.png");
+            this.imageList1.Images.SetKeyName(2, "record-vinyl.png");
+            this.imageList1.Images.SetKeyName(3, "search.png");
+            this.imageList1.Images.SetKeyName(4, "user-plus.png");
             // 
             // AlbumAdd
             // 
-            this.AlbumAdd.ImageIndex = 1;
+            this.AlbumAdd.ImageIndex = 2;
             this.AlbumAdd.ImageList = this.imageList1;
             this.AlbumAdd.Location = new System.Drawing.Point(130, 12);
             this.AlbumAdd.Name = "AlbumAdd";
@@ -84,7 +85,7 @@
             // 
             // ArtistAdd
             // 
-            this.ArtistAdd.ImageIndex = 3;
+            this.ArtistAdd.ImageIndex = 4;
             this.ArtistAdd.ImageList = this.imageList1;
             this.ArtistAdd.Location = new System.Drawing.Point(12, 12);
             this.ArtistAdd.Name = "ArtistAdd";
@@ -95,7 +96,7 @@
             // 
             // SongAdd
             // 
-            this.SongAdd.ImageIndex = 0;
+            this.SongAdd.ImageIndex = 1;
             this.SongAdd.ImageList = this.imageList1;
             this.SongAdd.Location = new System.Drawing.Point(71, 12);
             this.SongAdd.Name = "SongAdd";
@@ -278,7 +279,7 @@
             // 
             // Search
             // 
-            this.Search.ImageIndex = 2;
+            this.Search.ImageIndex = 3;
             this.Search.ImageList = this.imageList1;
             this.Search.Location = new System.Drawing.Point(189, 12);
             this.Search.Name = "Search";
@@ -289,7 +290,7 @@
             // 
             // GerarRelatorio
             // 
-            this.GerarRelatorio.ImageIndex = 4;
+            this.GerarRelatorio.ImageIndex = 0;
             this.GerarRelatorio.ImageList = this.imageList1;
             this.GerarRelatorio.Location = new System.Drawing.Point(248, 12);
             this.GerarRelatorio.Name = "GerarRelatorio";
@@ -302,9 +303,10 @@
             // 
             this.MenuRelatorio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RelatorioAniversariantes,
-            this.RelatorioAlbuns});
+            this.RelatorioAlbuns,
+            this.RelatorioEmails});
             this.MenuRelatorio.Name = "contextMenuStrip1";
-            this.MenuRelatorio.Size = new System.Drawing.Size(272, 48);
+            this.MenuRelatorio.Size = new System.Drawing.Size(272, 70);
             // 
             // RelatorioAniversariantes
             // 
@@ -317,6 +319,12 @@
             this.RelatorioAlbuns.Name = "RelatorioAlbuns";
             this.RelatorioAlbuns.Size = new System.Drawing.Size(271, 22);
             this.RelatorioAlbuns.Text = "Relatório de Álbuns a serem lançados";
+            // 
+            // RelatorioEmails
+            // 
+            this.RelatorioEmails.Name = "RelatorioEmails";
+            this.RelatorioEmails.Size = new System.Drawing.Size(271, 22);
+            this.RelatorioEmails.Text = "Relatório de Emails";
             // 
             // Main
             // 
@@ -374,5 +382,6 @@
         private System.Windows.Forms.ContextMenuStrip MenuRelatorio;
         private System.Windows.Forms.ToolStripMenuItem RelatorioAniversariantes;
         private System.Windows.Forms.ToolStripMenuItem RelatorioAlbuns;
+        private System.Windows.Forms.ToolStripMenuItem RelatorioEmails;
     }
 }

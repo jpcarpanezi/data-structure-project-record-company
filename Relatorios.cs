@@ -11,7 +11,8 @@ namespace data_structure_project_record_company {
     public partial class Relatorios : Form {
         public enum TipoRelatorio {
             Aniversario,
-            Album
+            Album,
+            Emails
         }
 
         private readonly TipoRelatorio Tipo;
@@ -32,6 +33,10 @@ namespace data_structure_project_record_company {
                     break;
                 case TipoRelatorio.Album:
                     GerarRelatorioAlbum();
+                    break;
+                case TipoRelatorio.Emails:
+                    MessageBox.Show("Erro");
+                    Close();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
