@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -78,10 +79,11 @@ namespace data_structure_project_record_company {
 
             InserirDadosIniciais();
 
-            int[] teste = { 19, 27, 36, 10, 64 };
-			for (int i = 0; i < teste.Length; i++) {
-                HashTable.InsertHash(teste[i]);
-            }
+             String[] teste = { "jpcarpanezi@gmail.com", "jp@proativa.info", "jpcarpanezi@hotmail.com" };
+             Random rnd = new Random();
+             for (int i = 0; i < teste.Length; i++) {
+                 HashTable.QuadraticHashInsert(rnd.Next(10, 50), teste[i]);
+             }
         }
 
         private void InserirDadosIniciais() {
