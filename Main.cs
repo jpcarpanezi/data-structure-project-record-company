@@ -78,19 +78,10 @@ namespace data_structure_project_record_company {
 
             InserirDadosIniciais();
 
-            int[] arr = {
-                50, 700, 76, 85, 92, 73, 101
-            };
-
-            int L = arr.Length;
-            int[] hashTable = new int[L];
-
-			for (int i = 0; i < L; i++) {
-                hashTable[i] = -1;
-			}
-
-            HashTable.InsertQuadraticHashing(hashTable, L, arr, L);
-
+            int[] teste = { 19, 27, 36, 10, 64 };
+			for (int i = 0; i < teste.Length; i++) {
+                HashTable.InsertHash(teste[i]);
+            }
         }
 
         private void InserirDadosIniciais() {
