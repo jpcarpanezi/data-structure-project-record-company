@@ -341,6 +341,7 @@
             this.MinimumSize = new System.Drawing.Size(816, 400);
             this.Name = "Main";
             this.Text = "Recorder";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

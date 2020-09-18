@@ -78,12 +78,6 @@ namespace data_structure_project_record_company {
             #endregion
 
             InserirDadosIniciais();
-
-             String[] teste = { "jpcarpanezi@gmail.com", "jp@proativa.info", "jpcarpanezi@hotmail.com" };
-             Random rnd = new Random();
-             for (int i = 0; i < teste.Length; i++) {
-                 HashTable.QuadraticHashInsert(rnd.Next(10, 50), teste[i]);
-             }
         }
 
         private void InserirDadosIniciais() {
@@ -99,6 +93,7 @@ namespace data_structure_project_record_company {
                 Telefone = "+5511987654321",
                 NomeEmpresario = "Empresário do Slash",
                 EmailEmpresario = "empresario@slash.com",
+                EmailEmpresarioTabelaHash = HashTable.QuadraticHashInsert("empresario@slash.com"),
                 TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
                 NumeroAlbunsLancados = 1,
                 NumeroComposicoes = 1,
@@ -117,6 +112,7 @@ namespace data_structure_project_record_company {
                 Telefone = "+5511987654321",
                 NomeEmpresario = "Empresário do pedro",
                 EmailEmpresario = "empresario@pedro.com",
+                EmailEmpresarioTabelaHash = HashTable.QuadraticHashInsert("empresario@pedro.com"),
                 TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
                 NumeroAlbunsLancados = 2,
                 NumeroComposicoes = 2,
@@ -135,6 +131,7 @@ namespace data_structure_project_record_company {
                 Telefone = "+5511987654321",
                 NomeEmpresario = "Empresário do adriano",
                 EmailEmpresario = "empresario@adriano.com",
+                EmailEmpresarioTabelaHash = HashTable.QuadraticHashInsert("empresario@adriano.com"),
                 TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
                 NumeroAlbunsLancados = 3,
                 NumeroComposicoes = 3,
@@ -153,6 +150,7 @@ namespace data_structure_project_record_company {
                 Telefone = "+5511987654321",
                 NomeEmpresario = "Empresário do edvaldo",
                 EmailEmpresario = "empresario@edvaldo.com",
+                EmailEmpresarioTabelaHash = HashTable.QuadraticHashInsert("empresario@edvaldo.com"),
                 TipoDeTrabalho = General.Artista.TipoTrabalho.Compositor,
                 NumeroAlbunsLancados = 4,
                 NumeroComposicoes = 4,
@@ -481,6 +479,9 @@ namespace data_structure_project_record_company {
 
                     // Remove os álbuns que contém o artista a ser removido para evitar problemas
                     General.Album.RemoverArtista(General.Artistas[e.RowIndex].Codigo);
+
+                    // Remove o email do empresário da tabela hash
+                    HashTable.Remove(General.Artistas[e.RowIndex].EmailEmpresarioTabelaHash);
 
                     // Remove o artista
                     General.Artista.RemoveAt(e.RowIndex);

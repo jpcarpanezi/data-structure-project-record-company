@@ -122,6 +122,7 @@ namespace data_structure_project_record_company {
                     Telefone = Telefone.Text,
                     NomeEmpresario = NomeEmpresario.Text,
                     EmailEmpresario = EmailEmpresario.Text,
+                    EmailEmpresarioTabelaHash = HashTable.QuadraticHashInsert(EmailEmpresario.Text),
                     TipoDeTrabalho = tipoTrabalho,
                     NumeroAlbunsLancados = nAlbunsLancados,
                     NumeroComposicoes = nComposicoes,
@@ -133,6 +134,10 @@ namespace data_structure_project_record_company {
                 MergeSort.Sort(General.Artistas, Array.ConvertAll(General.Artistas, a => a.Codigo).Where(a => a > 0).ToArray());
             }
             else {
+                if (EmailEmpresario.Text != General.Artistas[Index].EmailEmpresario) {
+                    HashTable.Edit(General.Artistas[Index].EmailEmpresarioTabelaHash, EmailEmpresario.Text);
+                }
+
                 General.Artistas[Index] = new General.Artista() {
                     Codigo = General.Artistas[Index].Codigo,
                     NomeVerdadeiro = NomeVerdadeiro.Text,
@@ -144,6 +149,7 @@ namespace data_structure_project_record_company {
                     Telefone = Telefone.Text,
                     NomeEmpresario = NomeEmpresario.Text,
                     EmailEmpresario = EmailEmpresario.Text,
+                    EmailEmpresarioTabelaHash = General.Artistas[Index].EmailEmpresarioTabelaHash,
                     TipoDeTrabalho = tipoTrabalho,
                     NumeroAlbunsLancados = nAlbunsLancados,
                     NumeroComposicoes = nComposicoes,
@@ -159,6 +165,7 @@ namespace data_structure_project_record_company {
             if (MessageBox.Show("Tem certeza que deseja remover este artista? Todos as músicas e álbuns que contém este artista também serão excluídos.", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
                 General.Cancao.RemoverArtista(General.Artistas[Index].Codigo);
                 General.Album.RemoverArtista(General.Artistas[Index].Codigo);
+                HashTable.Remove(General.Artistas[Index].EmailEmpresarioTabelaHash);
                 General.Artista.RemoveAt(Index);
 
                 Program.globalForm.UpdateRows(Main.DataGrid.Albuns);

@@ -35,12 +35,35 @@ namespace data_structure_project_record_company {
                     GerarRelatorioAlbum();
                     break;
                 case TipoRelatorio.Emails:
-                    MessageBox.Show("Erro");
-                    Close();
+                    GerarRelatorioEmails();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private void GerarRelatorioEmails() {
+            Text = "Relatório de emails";
+
+            LabelGridView.Text = "Emails de todos os empresários";
+            LabelGridView.Location = new Point(13, 12);
+
+            dataGridView1.Size = new Size(775, 408);
+            dataGridView1.Location = new Point(13, 30);
+
+            LabelMes.Visible = false;
+            MesDesejado.Visible = false;
+            PesquisarMes.Visible = false;
+
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("Email", "Email");
+
+            string[] emails = HashTable.GetAllValues();
+            for (int i = 0; i < emails.Length; i++) {
+                dataGridView1.Rows.Add(emails[i]);
+            }
+
+            RemoverSort();
         }
 
         private void GerarRelatorioAlbum() {

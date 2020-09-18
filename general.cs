@@ -11,7 +11,7 @@ namespace data_structure_project_record_company {
         public static int ArtistasSize;
         public static Cancao[] Cancoes;
         public static int CancoesSize;
-        public static int MaxSize = 10000;
+        public const int MaxSize = 10000;
 
         public struct Album {
             public int Codigo { get; set; }
@@ -66,6 +66,7 @@ namespace data_structure_project_record_company {
             public string Telefone { get; set; }
             public string NomeEmpresario { get; set; }
             public string EmailEmpresario { get; set; }
+            public int EmailEmpresarioTabelaHash { get; set; }
             public TipoTrabalho TipoDeTrabalho { get; set; }
             public int NumeroAlbunsLancados { get; set; }
             public int NumeroComposicoes { get; set; }
