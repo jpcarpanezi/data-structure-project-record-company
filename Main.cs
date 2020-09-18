@@ -77,6 +77,20 @@ namespace data_structure_project_record_company {
             #endregion
 
             InserirDadosIniciais();
+
+            int[] arr = {
+                50, 700, 76, 85, 92, 73, 101
+            };
+
+            int L = arr.Length;
+            int[] hashTable = new int[L];
+
+			for (int i = 0; i < L; i++) {
+                hashTable[i] = -1;
+			}
+
+            HashTable.InsertQuadraticHashing(hashTable, L, arr, L);
+
         }
 
         private void InserirDadosIniciais() {
