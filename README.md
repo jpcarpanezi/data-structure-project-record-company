@@ -39,4 +39,4 @@ Para ordenação dos elementos inseridos nos vetores, foi-se utilizado como chav
 No vetor de relatório de e-mails dos empresários, foi utilizado uma tabela de dispersão ou tabela hash, a qual associa chaves de pesquisa a valores. Para evitar casos de colisão, foi utilizado o método de *Open Addressing* chamado *Quadratic Probing*.
 
 ## Licença
-Este projeto é um trabalho de cunho acadêmico, voltado para conhecimento de estrutura de dados e sem fins lucrativos.
+Este projeto é um trabalho de cunho acadêmico, voltado para conhecimento de estrutura de dados e sem fins lucrativos. Olhe o arquivo de <a href="https://github.com/jpcarpanezi/data-structure-project-record-company/blob/master/LICENSE">LICENSE</a> para direitos e limitações (MIT).
