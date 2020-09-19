@@ -5,6 +5,12 @@
 Este repositório trata-se de um trabalho de **Estrutura de Dados(ESTC3)** do **Instituto Federal de Ciências e Tecnologia de São Paulo(IFSP) - Campus Piracicaba**. Este grupo composto pelos integrantes desenvolvedores Aldemir Humberto Soares Neto, Isabelle Caroline de Carvalho Costa, João Pedro Carpanezi dos Santos e Murilo Azevedo Jacon.
 O projeto é constituido por um sistema de vetores de structs de tamanho fixo o qual, utilizando metodologias de busca binária e ordenações juntamente com Tabela Hash, compõe um sistema de uma gravadora. 
 
+## Instalação
+Para fazer a instalação, basta apenas clonar o repositório em seu ambiente local e executar a compilação dos arquivos.
+```
+git clone https://github.com/jpcarpanezi/data-structure-project-record-company.git
+```
+
 ## Manual de Utilização
 ### Inserir Artista
 <img src="icons/user-plus.png" width="50px">
