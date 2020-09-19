@@ -2,7 +2,7 @@
 
 <p align="center"><img src="icons/logo.png" width="250px"></p>
 
-Este repositório trata-se de um trabalho de **Estrutura de Dados(ESTC3)** do **Instituto Federal de Ciências e Tecnologia de São Paulo(IFSP) - Campus Piracicaba**. Este composto pelos integrantes desenvolvedores Aldemir Humberto Soares Neto, Isabelle Caroline de Carvalho Costa, João Pedro Carpanezi dos Santos e Murilo Azevedo Jacon.
+Este repositório trata-se de um trabalho de **Estrutura de Dados(ESTC3)** do **Instituto Federal de Ciências e Tecnologia de São Paulo(IFSP) - Campus Piracicaba**. Este grupo composto pelos integrantes desenvolvedores Aldemir Humberto Soares Neto, Isabelle Caroline de Carvalho Costa, João Pedro Carpanezi dos Santos e Murilo Azevedo Jacon.
 O projeto é constituido por um sistema de vetores de structs de tamanho fixo o qual, utilizando metodologias de busca binária e ordenações juntamente com Tabela Hash, compõe um sistema de uma gravadora. 
 
 ## Manual de Utilização
@@ -37,3 +37,6 @@ Neste projeto foi aplicado para busca, o algoritmo de busca binária, uma estrut
 Para ordenação dos elementos inseridos nos vetores, foi-se utilizado como chave um identificador inteiro, ordenado por um Merge Sort, uma estrutura de dados de array e listas ligadas de melhor caso Θ(n log n) típico, Θ(n) variante natural, caso médio Θ(n log n) e pior caso Θ(n log n).
 
 No vetor de relatório de e-mails dos empresários, foi utilizado uma tabela de dispersão ou tabela hash, a qual associa chaves de pesquisa a valores. Para evitar casos de colisão, foi utilizado o método de *Open Addressing* chamado *Quadratic Probing*.
+
+## Licença
+Este projeto é um trabalho de cunho acadêmico, voltado para conhecimento de estrutura de dados e sem fins lucrativos.
